@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import longData from './Asset Sen long/SenLongData';
-import Akpadalong from '../Akpada/Akpadalong';
+// import Akpadalong from '../Akpada/Akpadalong';
 import { Link } from 'react-router-dom';
 import Measurement from '../Measuremanet/Measurement';
 

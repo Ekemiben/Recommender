@@ -4,11 +4,15 @@
     box-sizing: border-box;
 }
 .measurement-main-frame{
+   
+    
+}
+.input-frames{
     margin:20px;
     display: flex;
-    
+    /* flex-direction: column; */
+    /* border:3px solid rgb(153, 36, 36); */
     justify-content: space-around;
-    
 }
 .sizes-frame{
     border:1px solid gray;
@@ -54,4 +58,26 @@ label{
 img{
     height: 100%;
     width: 100%;
+}
+.recommendation-option{
+   
+}
+.recommed-display-frame{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    border:1px solid gray;
+    height: 70vh;
+}
+.recommendation-option h3{
+    display: flex;
+    margin: 30px;
+    font-size: 45px;
+
+}
+.recommendation-option .r-option{
+    width: 20%;
+    height: 60%;
+    margin: 30px;
 }

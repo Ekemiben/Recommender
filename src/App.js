@@ -1,11 +1,10 @@
 import { BrowserRouter , Routes, Route} from 'react-router-dom';
-import Akpadalong from "./components/Akpada/Akpadalong";
+import Women from "./components/Akpada/Women";
 import Senatorlong from "./components/Senator/Senatorlong";
-import Senatorshort from "./components/Senator/Senatorshort";
 import Landing from './components/Landing/Landing';
-import OldCodes from './components/OldCodes/OldCodes';
-import Casualtop from './components/Casual/Casualtop';
+import Kids from './components/Casual/Kids';
 import Navbar from './components/Navbar/Navbar'
+
 
 
 function App() {
@@ -15,10 +14,9 @@ function App() {
     <Navbar />
     <Routes>
       <Route path='/' element={<Landing />}/>
-      <Route path='/senator' element={<Senatorlong />}/>
-      <Route path='/akpadalong' element={<Akpadalong />}/>
-      {/* <Route path='/oldcodes' element={<OldCodes />}/> */}
-      <Route path='/casual' element={<Casualtop />}/>
+      <Route path='/men' element={<Senatorlong />}/>
+      <Route path='/women' element={<Women />}/>
+      <Route path='/kids' element={<Kids />}/>
       </Routes>
       </BrowserRouter>
     </div>

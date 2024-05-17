@@ -26,30 +26,92 @@ const MeasurementCal = () => {
           if (Array.isArray(item.rate)) {
               sum = item.rate.reduce((acc, curr) => acc + curr, 0); // Sum up the rates
               sumDiv = ((sum)/(item.numberCount))
+              // console.log(sumDiv)
+              let randomValue = sumDiv[Math.floor(Math.random() * sumDiv.length)]
+              console.log(randomValue)
+              
           } else {
               sum = item.rate; // If rate is not an array, consider it as a single value
           }
+
+         
+
           let conditionMeet = 0
-          if (neck === "neckS" && chest === "chestS" && waist === "waistS" && sleeve === "sleeveS" && inseam === "inseamS"   && sumDiv > 4.0) {
+          if (neck === "neckS" && chest === "chestS" && waist === "waistS" && sleeve === "sleeveS" && inseam === "inseamS"   && sumDiv > 4.0 && item.size === "S") {
             conditionMeet  = 1
-          }
-          if(conditionMeet && item.size === "S"){
-            setImgDisplay(item.img)
-          }
-          if (neck === "neckM" && chest === "chestM" && waist === "waistM" && sleeve === "sleeveM" && inseam === "inseamM"   && sumDiv > 4.0) {
-            conditionMeet  = 1
-          }
-          if(conditionMeet && item.size === "M"){
             setImgDisplay(item.img)
           }
 
+          if (conditionMeet && sumDiv > 2.0 && item.size === "S") {
+            setImgArray(prevImageArray => [...prevImageArray, item.img]);
+            }
+
+          if (neck === "neckM" && chest === "chestM" && waist === "waistM" && sleeve === "sleeveM" && inseam === "inseamM"   && sumDiv > 4.0 && item.size === "M") {
+            conditionMeet  = 1
+            setImgDisplay(item.img)
+          } 
+
           if (conditionMeet && sumDiv > 2.0 && item.size === "M") {
             setImgArray(prevImageArray => [...prevImageArray, item.img]);
-        };
-        console.log(imgArray)
+          }
+
+          if (neck === "neckL" && chest === "chestL" && waist === "waistL" && sleeve === "sleeveL" && inseam === "inseamL"   && sumDiv > 4.0 && item.size === "L") {
+            conditionMeet  = 1
+            setImgDisplay(item.img)
+          } 
+
+          if (conditionMeet && sumDiv > 2.0 && item.size === "L") {
+            setImgArray(prevImageArray => [...prevImageArray, item.img]);
+          }
+
+          if (neck === "neckXL" && chest === "chestXL" && waist === "waistXL" && sleeve === "sleeveXL" && inseam === "inseamXL"   && sumDiv > 4.0 && item.size === "XL") {
+            conditionMeet  = 1
+            setImgDisplay(item.img)
+          } 
+
+          if (conditionMeet && sumDiv > 2.0 && item.size === "XL") {
+            setImgArray(prevImageArray => [...prevImageArray, item.img]);
+          }
+          if (neck === "neck2XL" && chest === "chest2XL" && waist === "waist2XL" && sleeve === "sleeve2XL" && inseam === "inseam2XL"   && sumDiv > 4.0 && item.size === "2XL") {
+            conditionMeet  = 1
+            setImgDisplay(item.img)
+          } 
+
+          if (conditionMeet && sumDiv > 2.0 && item.size === "2XL") {
+            setImgArray(prevImageArray => [...prevImageArray, item.img]);
+          }
+          if (neck === "neck3XL" && chest === "chest3XL" && waist === "waist3XL" && sleeve === "sleeve3XL" && inseam === "inseam3XL"   && sumDiv > 4.0 && item.size === "3XL") {
+            conditionMeet  = 1
+            setImgDisplay(item.img)
+          } 
+
+          if (conditionMeet && sumDiv > 2.0 && item.size === "3XL") {
+            setImgArray(prevImageArray => [...prevImageArray, item.img]);
+          }
+          if (neck === "neck4XL" && chest === "chest4XL" && waist === "waist4XL" && sleeve === "sleeve4XL" && inseam === "inseam4XL"   && sumDiv > 4.0 && item.size === "4XL") {
+            conditionMeet  = 1
+            setImgDisplay(item.img)
+          } 
+
+          if (conditionMeet && sumDiv > 2.0 && item.size === "4XL") {
+            setImgArray(prevImageArray => [...prevImageArray, item.img]);
+          }
+          if (neck === "neck5XL" && chest === "chest5XL" && waist === "waist5XL" && sleeve === "sleeve5XL" && inseam === "inseam5XL"   && sumDiv > 4.0 && item.size === "5XL") {
+            conditionMeet  = 1
+            setImgDisplay(item.img)
+          } 
+
+          if (conditionMeet && sumDiv > 2.0 && item.size === "5XL") {
+            setImgArray(prevImageArray => [...prevImageArray, item.img]);
+          }
+
+// 
+
         
       });
     }
+
+   
 
     function categoriesTopDisplay (option){
         let data = longData
@@ -71,7 +133,7 @@ const MeasurementCal = () => {
    
   return (
     <div className='measurement-main-frame'>
-
+      <div className='input-frames'>
             <div className='sizes-frame'>
               {/* Top Measurement */}
                 <h3 style={{display:"flex", justifyItems:"center", margin:"30px 30%"}}>Top Measurement</h3>
@@ -156,35 +218,50 @@ const MeasurementCal = () => {
                 <select name="cars" id="cars" onChange={(option)=>{
                   let inseamVal = option.target.value;
                   setInseam(inseamVal)
-                }}>
+                }} onClick={(option)=>{setImgArray([])}} >
                   <option>Select Measurement</option>
                 <option value="inseamS">31</option>
                 <option value="inseamM">31</option>
+                <option value="inseamL">31</option>
+                <option value="inseamXL">31</option>
+                <option value="inseam2XL">31</option>
+                <option value="inseam3XL">31</option>
+                <option value="inseam4XL">31</option>
+                <option value="inseam5XL">31</option>
                 </select>
                 </div>
 
-                
-
-               
-
-               
 
                 <div className='btn-frame'><button onClick={()=>rateSummary()}>Recommend</button>
             </div>           
             </div>
-            <div className='sizes-frame'>
-                <h3>Check your recommendation here</h3>
-                <img src={imgROneDisplay} /> <br></br>
-                {imgArray?.map((imgUrl, index) => (
-    <img key={index} src={imgUrl}  />
-))}
+             {/* Image Frame */}
+             <div className='img-frame'><img src={imgDisplay} /></div>
+             <div className='sizes-frame'>
+                <h3>Same Size with another style</h3>
+                {/* <img src={imgROneDisplay} />    */}
+            </div>
+        </div>
+
+           
+
+            <div className='recommendation-option'>
+              <h3>Recommendations</h3>
+              <div className='recommed-display-frame'>
+              <div className='r-option'><img src={imgArray[0]} /></div>
+                <div className='r-option'><img src={imgArray[1]} /></div>
+                <div className='r-option'><img src={imgArray[2]} /></div>
+                <div className='r-option'><img src={imgArray[3]} /></div>
+              </div>
+                {/* {imgArray?.map((imgUrl, index) => (
+                <img key={index} src={imgUrl}  />
+                ))} */}
+                
+                
+                
             </div>
             
-            {/* Image Frame */}
-            <div className='img-frame'><img src={imgDisplay} /></div>
-
-
-            
+                
     </div>
   )
   

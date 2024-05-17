@@ -47,17 +47,6 @@ const Landing = () => {
         
       </div>
 
-
-
-
-      {/* {longData.map((item, index)=>{
-
-        if(item.id === 1){
-          console.log(item.name)
-        }
-        
-      })} */}
-      
     </div>
   )
 }

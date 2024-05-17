@@ -4,7 +4,7 @@ import Measurement from '../Measuremanet/Measurement';
 
 
 
-const Senator = () => {
+const Women = () => {
   const [sen, setSen] = useState('');
 
   function categoriesDisplay (option){
@@ -52,4 +52,4 @@ const Senator = () => {
   )
 }
 
-export default Senator
+export default Women
