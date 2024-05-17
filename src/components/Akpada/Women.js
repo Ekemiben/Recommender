@@ -17,25 +17,25 @@ const Women = () => {
   }
   return (
     <div  className='main-frame'>
-      <div className='selection'><br></br><h1>Your category is Akpada</h1> <br></br>
+      <div className='selection'><br></br><h1>You're on the women category</h1> <br></br>
 
         <select name="Your cloth material" id="Your cloth material" onChange={(option)=>{categoriesDisplay() 
-        if(option.target.value === "akpada"){
-          return window.location = "/akpadalong"
-      } if (option.target.value === "casual"){
-        return window.location = "/casualtop"
+        if(option.target.value === "men"){
+          return window.location = "/men"
+      } if (option.target.value === "women"){
+        return window.location = "/women"
       }
-       if (option.target.value === "senator"){
-        return window.location = "/senator"
+       if (option.target.value === "kids"){
+        return window.location = "/kids"
       }
        
          
         }}>
             
         <option > Your cloth material</option>
-          <option value="senator">Senator</option>
-          <option value="akpada">Akpada</option>
-          <option value="casual">Casual</option>
+          <option value="men">Men</option>
+          <option value="women">Women</option>
+          <option value="kids">Kids & Teens</option>
         </select>
         
       </div>

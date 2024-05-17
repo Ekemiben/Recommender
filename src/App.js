@@ -2,7 +2,7 @@ import { BrowserRouter , Routes, Route} from 'react-router-dom';
 import Women from "./components/Akpada/Women";
 import Senatorlong from "./components/Senator/Senatorlong";
 import Landing from './components/Landing/Landing';
-import Kids from './components/Casual/Kids';
+import Kids from './components/Casual/Kidsteen';
 import Navbar from './components/Navbar/Navbar'
 
 

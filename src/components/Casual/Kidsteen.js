@@ -5,26 +5,26 @@ import { Link } from 'react-router-dom';
 import Measurement from '../Measuremanet/Measurement';
 
 
-const Casualtop = () => {
+const Kidsteen = () => {
  
   return (
     <div style={{display:"flex", justifyContent:"center"}}>
-      <div className='boxes'><h1>Your category is Casual</h1>
+      <div className='boxes'><h1>You're on the Kids/Teens category</h1>
 {/* Category Selection */}
         <select name="Your cloth material" id="Your cloth material" onChange={(option)=>{ 
-        if(option.target.value === "akpada"){
-          return window.location = "/akpadalong"
-      } if (option.target.value === "casual"){
-        return window.location = "/casualtop"
+        if(option.target.value === "men"){
+          return window.location = "/men"
+      } if (option.target.value === "women"){
+        return window.location = "/women"
       }
-       if (option.target.value === "senator"){
-        return window.location = "/senator"
+       if (option.target.value === "kids"){
+        return window.location = "/kids"
       } 
         }}>
         <option > Your cloth material</option>
-          <option value="senator">Senator</option>
-          <option value="akpada">Akpada</option>
-          <option value="casual">Casual</option>
+          <option value="men">Men</option>
+          <option value="women">Women</option>
+          <option value="kids">Kids/Teens</option>
         </select>
         
       </div>
@@ -44,4 +44,4 @@ const Casualtop = () => {
   )
 }
 
-export default Casualtop
+export default Kidsteen

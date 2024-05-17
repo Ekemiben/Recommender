@@ -145,15 +145,15 @@ const MeasurementCal = () => {
                     setNeck(neckVal)
                    
                 }}>
-                  <option>Select Measurement</option><hr></hr>
-                <option value="neckS">S &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       14-14½"</option>
-                <option value="neckM">M  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  15-15½"</option>
-                <option value="neckL">L   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16-16½"</option>
-                <option value="neckXL">XL   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17-17½"</option>
-                <option value="neck2XL">2XL  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  18-18½"</option>
-                <option value="neck3XL">3XL  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  19-19½"</option>
-                <option value="neck4XL">4XL  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  20½-21"</option>
-                <option value="neck5XL">5XL  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  22-22½"</option><br></br>
+                  <option>Select Your Measurement Range</option><hr></hr>
+                <option value="neckS">14 - 14½"</option>
+                <option value="neckM">15 - 15½"</option>
+                <option value="neckL">16 - 16½"</option>
+                <option value="neckXL">17 - 17½"</option>
+                <option value="neck2XL">18 - 18½"</option>
+                <option value="neck3XL">19 - 19½"</option>
+                <option value="neck4XL">20½ - 21"</option>
+                <option value="neck5XL">22 - 22½"</option><br></br>
                 </select>
                 </div>
 

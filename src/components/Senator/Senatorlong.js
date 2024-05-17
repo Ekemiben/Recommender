@@ -11,7 +11,7 @@ const Senator = () => {
  
   return (
     <div  className='main-frame'>
-      <div className='selection'><br></br><h1>Your category is Senator</h1> <br></br>
+      <div className='selection'><br></br><h1>You're on the men category</h1> <br></br>
         <select name="Your cloth material" id="Your cloth material" onChange={(option)=>{ 
         if(option.target.value === "women"){
           return window.location = "/women"
@@ -23,9 +23,9 @@ const Senator = () => {
       } 
         }}>
         <option > Your cloth material</option>
-          <option value="men">Men’s Wears</option>
-          <option value="women">Akpada</option>
-          <option value="kids">Casual</option>
+          <option value="men">Men</option>
+          <option value="women">Women</option>
+          <option value="kids">Kids & Teens</option>
         </select>
         
       </div>
