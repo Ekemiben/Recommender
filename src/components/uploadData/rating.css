@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+form{
+    height: 800px;
+    border:2px solid red;
+}
+.form-input-frame{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border:2px solid red;
+    height: 600px;
+}
+.form-input-frame input{
+ margin: 10px 20px;
+ height: 40px;
+ width: 80%;
+ padding-left: 10px;
+}
+.form-input-frame .input-file{
+    border:1px solid gray;
+    width: 80%;
+    height: 40px;
+    margin-left:80px;
+}
+.star-main-frame{
+    height: 200px;
+    margin:20px;
+}
+
+.stars > span{
+    font-size: 40px;
+    /* color: rgb(202, 172, 4); */
+    cursor: pointer;
+}
+.star-selected{
+    font-size: 40px;
+    color:rgb(244, 174, 16);
+    cursor: pointer;
+}
+.star-selected:hover{
+    font-size: 40px;
+    color:rgb(244, 174, 16);
+    cursor: pointer;
+}

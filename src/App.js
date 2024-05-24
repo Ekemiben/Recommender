@@ -4,6 +4,7 @@ import Senatorlong from "./components/Senator/Senatorlong";
 import Landing from './components/Landing/Landing';
 import Kids from './components/Casual/Kidsteen';
 import Navbar from './components/Navbar/Navbar'
+import UploadForm from './components/uploadData/UploadForm';
 
 
 
@@ -17,6 +18,7 @@ function App() {
       <Route path='/men' element={<Senatorlong />}/>
       <Route path='/women' element={<Women />}/>
       <Route path='/kids' element={<Kids />}/>
+      <Route path='/upload' element={<UploadForm />}/>
       </Routes>
       </BrowserRouter>
     </div>
