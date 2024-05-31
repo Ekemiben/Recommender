@@ -5,6 +5,7 @@ import Landing from './components/Landing/Landing';
 import Kids from './components/Casual/Kidsteen';
 import Navbar from './components/Navbar/Navbar'
 import UploadForm from './components/uploadData/UploadForm';
+import BMSG from './components/Measuremanet/BMSG';
 
 
 
@@ -17,7 +18,7 @@ function App() {
       <Route path='/' element={<Landing />}/>
       <Route path='/men' element={<Senatorlong />}/>
       <Route path='/women' element={<Women />}/>
-      <Route path='/kids' element={<Kids />}/>
+      <Route path='/kids' element={<BMSG />}/>
       <Route path='/upload' element={<UploadForm />}/>
       </Routes>
       </BrowserRouter>

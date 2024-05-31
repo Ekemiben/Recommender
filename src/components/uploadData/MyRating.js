@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './rating.css'
+import { baseURL } from '../../utils/constant';
 
 
 const MyRating = () => {
   // Star Rating
   const [selected, setSelected] = useState("");
-  const [selectedStarCount, setSelectedStarCount] = useState(0);
+  const [selectedstarcount, setSelectedStarCount] = useState(0);
   const [selectedStarOver, SetSelectedStarOver] = useState(0)
-  const [clickCount, setClickCount] = useState(0)
+  const [clickcount, setClickCount] = useState(0)
 
 // Input values
 const [neck, setNeck] = useState()
 const [chest, setChest] = useState()
 const [waist, setWaist] = useState()
 const [sleeve, setSleeve] = useState()
+const [imgurl, setImgurl] = useState(null)
 const [inseam, setInseam] = useState()
-const [image, setImage] = useState(null)
+
 
 // Sizes inpute
 const [neckSize, setNeckSize] = useState()
@@ -160,7 +162,9 @@ function sleeveSizeFunc(){
     setSleeveSize("5XL")
   } 
 }
-   
+
+
+  //  Form input functions
 const handleNeck = (e) => {
   setNeck(e.target.value);
 };
@@ -177,28 +181,42 @@ const handleInseam = (e) => {
   setInseam(e.target.value);
 };
 const handleImageChange = (e) => {
-  setImage(e.target.files[0]);
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      setImgurl(reader.result);
+    };
+    reader.readAsDataURL(file);
+  }
 };
-// Data Submmission
-const handleFormSummission = async(e)=>{
-  e.preventDefault()
-  const formData = new formData();
+
+const handleFormSummission = async(e) => {
+  e.preventDefault();
+  const formData = new FormData();
+
   formData.append('neck', neck);
   formData.append('chest', chest);
   formData.append('waist', waist);
   formData.append('sleeve', sleeve);
   formData.append('inseam', inseam);
-  formData.append('image', image);
-  formData.append('clickCount', clickCount);
-  formData.append('selectedStarCount', selectedStarCount);
-  try{
-    const response = await axios.post("my url", formData);
-    console.log("Data Added", response.data)
+  formData.append('imgurl', imgurl); // Correctly append the image URL or data
+  formData.append('clickcount', clickcount);
+  formData.append('selectedstarcount', selectedstarcount);
 
-  }catch(error){
-    console.log("error adding item", error)
+  try {
+    const response = await axios.post(`${baseURL}/savedItem`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+    console.log('Item added:', response.data);
+  } catch (error) {
+    console.log("error adding item", error);
   }
+  console.log([...formData.entries()]);
 }
+
 
  
   return (
@@ -219,7 +237,7 @@ const handleFormSummission = async(e)=>{
           
         </select>
         </div>
-    <form onSubmit={handleFormSummission}>
+    <form onSubmit={handleFormSummission}  >
       <div className='form-input-frame'>
      
     
@@ -298,9 +316,12 @@ const handleFormSummission = async(e)=>{
       </div>
      
       <div className='input-file'>
-      <input type="file" onChange={(e)=>{setImage(e.target.files[0])}}></input>
+      {/* <input type="file" accept='image/*' onChange={(e)=>{setImgurl(e.target.files[0])}}></input> */}
+      <input type="file" accept='image/*' onChange={handleImageChange} ></input>
       </div>
-      <div><button onClick={console.log(image)}>image</button></div>
+      <div><button >image check</button></div>
+    
+      
 
         <button onClick={(e)=>{
           e.preventDefault()
@@ -310,16 +331,17 @@ const handleFormSummission = async(e)=>{
           sleeveSizeFunc()
           }} style={{height:"40px", backgroundColor:"black", color:"white", fontSize:"20px",margin:"30px 20px"}}>Check Sizes</button>
       </div>
-      
-    </form>
-    {/* Star Rating Section */}
+      <button type="submit">Add Item</button>
+
+
+      {/* Star Rating Section */}
     <div className='star-main-frame'>
       <h3>Rating</h3>
       <div className='stars'>
         {
           [...Array(6)].map((item, index)=>{
             return  <span key={index} 
-            className={`${index +1 <= selectedStarCount ? "star-selected" : ""} ${index +1 <= selectedStarOver ? "star-selected" : ""}`}
+            className={`${index +1 <= selectedstarcount ? "star-selected" : ""} ${index +1 <= selectedStarOver ? "star-selected" : ""}`}
             onClick={()=>{
               setSelectedStarCount(index+1)
               setClickCount(1)
@@ -336,11 +358,18 @@ const handleFormSummission = async(e)=>{
      
       
       </div>
-      <div>Rating Count {selectedStarCount}</div>
-      <div>Click Count: {clickCount}</div>
+      <div>Rating Count {selectedstarcount}</div>
+      <div>Click Count: {clickcount}</div>
       <div>Click Count Over: {selectedStarOver}</div>
       
     </div>
+      
+    <div className='image-display-frame'>
+    <  img src={imgurl} style={{height:"500px", width:"400px"}} />
+    </div>
+    </form>
+    
+    
       
     </>
   )
