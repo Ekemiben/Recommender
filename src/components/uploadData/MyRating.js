@@ -190,6 +190,10 @@ const handleImageChange = (e) => {
     reader.readAsDataURL(file);
   }
 };
+const handleImgChange = (event) =>{
+  console.log(event.target.files[0]);
+  setImgurl(event.target.files[0])
+}
 
 const handleFormSummission = async(e) => {
   e.preventDefault();
@@ -317,7 +321,8 @@ const handleFormSummission = async(e) => {
      
       <div className='input-file'>
       {/* <input type="file" accept='image/*' onChange={(e)=>{setImgurl(e.target.files[0])}}></input> */}
-      <input type="file" accept='image/*' onChange={handleImageChange} ></input>
+      {/* <input type="file" accept='image/*' onChange={handleImageChange} ></input> */}
+      <input type="file" accept='image/*' onChange={handleImgChange} ></input>
       </div>
       <div><button >image check</button></div>
     

@@ -20,6 +20,7 @@ function App() {
       <Route path='/women' element={<Women />}/>
       <Route path='/kids' element={<BMSG />}/>
       <Route path='/upload' element={<UploadForm />}/>
+      <Route path='/retrieve' element={<BMSG />}/>
       </Routes>
       </BrowserRouter>
     </div>
