@@ -261,6 +261,7 @@ const handleFormSummission = async(e) => {
       
       }  onChange={handleNeck}/>{neckSize}
       </div>
+      
       <div>
         <label >Chest</label>
       <input type="number" value={chest}  min="86.36" max="162.56" placeholder='Your chest measurement is between 86.36cm to 162.56cm' onBlur={(inputB)=>{
