@@ -1,4 +1,4 @@
-*{
+/* *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
@@ -18,7 +18,8 @@ border:2px solid red;
     flex-direction: column;
     width: 50%;
     border:2px solid red;
-    height: 600px;
+    height: 400px;
+    margin-bottom: 300px;
 }
 .input-frame input{
  margin: 10px 20px;
@@ -26,18 +27,135 @@ border:2px solid red;
  width: 80%;
  padding-left: 10px;
 }
+.recommendations{
+    display: grid;
+    border: 1px dashed red;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 2fr) );
+    gap:20px;
+
+}
 .items{
-    height: 100vh;
-    width: 50vw;
-    display: flex;
+   
 }
 .img-fluid{
     border:1px gray solid;
     height: 200px;
-
-
 }
 .img-fluid img{
-    height: 70%;
-    width: 80%;
-}
+    height: 100%;
+    width: 100%;
+} */
+
+
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .main-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fce3fe;
+  }
+  
+  .input-frame {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    
+  }
+  
+  .input-frame label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-frame .input-box,
+  .input-frame div {
+    margin-bottom: 15px;
+  }
+  
+  .input-frame input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+   
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .recommendations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .items {
+    margin: 10px;
+    flex: 1 1 200px;
+    max-width: 200px;
+  }
+  
+  .img-fluid img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  /* Tablet styles */
+  @media (min-width: 600px) and (max-width: 1024px) {
+    .input-frame {
+      width: 80%;
+    }
+  
+    .recommendations {
+      justify-content: space-around;
+    }
+  
+    .items {
+      flex: 1 1 45%;
+      max-width: 45%;
+    }
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 599px) {
+    .input-frame {
+      width: 90%;
+    }
+  
+    .recommendations {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .items {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  
+    button {
+      width: 100%;
+      padding: 15px;
+    }
+  }
+  

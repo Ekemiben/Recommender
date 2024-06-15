@@ -20,13 +20,11 @@ const Navebar = ({count}) => {
         <li onClick={()=> setMenu("home")}><Link style={{textDecoration: "none"}} to='/'>Home</Link> {menu === "home" ? <hr />: <></>}</li>
         <li onClick={()=> {setMenu("men")}}><Link style={{textDecoration: "none"}} to='/men'>Men</Link>  {menu === "men" ? <hr />: <></>}</li>
         <li onClick={()=> {setMenu("women")}}><Link style={{textDecoration: "none"}} to ='/women'>Women</Link>{menu === "women" ? <hr />: <></>}</li>
-        <li onClick={()=> {setMenu("kids")}}><Link style={{textDecoration: "none"}} to ='/kids'>kids</Link> {menu === "kids" ? <hr />: <></>}</li>
+        {/* <li onClick={()=> {setMenu("kids")}}><Link style={{textDecoration: "none"}} to ='/kids'>kids</Link> {menu === "kids" ? <hr />: <></>}</li> */}
       </ul>
       <div className='nav-login-cart'>
         <button> <Link style={{textDecoration: "none"}} to='LoginSignup'>Login</Link></button>
-        {/* <Link to='cart'><img src={cart_icon} alt='' /></Link> */}
-        {/* <p className='nav-cart-count'>{count}</p> */}
-        {/* <p className='nav-cart-count'>{getTotalCartItems()}</p> */}
+        
       </div>
 
     </div>

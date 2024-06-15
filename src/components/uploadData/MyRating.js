@@ -214,13 +214,21 @@ const handleFormSummission = async(e) => {
         'Content-Type': 'multipart/form-data'
       }
     });
-    console.log('Item added:', response.data);
+    // console.log('Item added:', response.data);
+    alert("Your data was added successfully!")
   } catch (error) {
-    console.log("error adding item", error);
+    alert("Ensure you input the data correctlly")
   }
   console.log([...formData.entries()]);
 }
 
+const handleInputChange = (e, handlerFunc) => {
+  handlerFunc(e);
+  neckSizeFunc();
+  chestSizeFunc();
+  waistSizeFunc();
+  sleeveSizeFunc();
+};
 
  
   return (
@@ -241,39 +249,40 @@ const handleFormSummission = async(e) => {
           
         </select>
         </div>
-    <form onSubmit={handleFormSummission}  >
+    <form onSubmit={handleFormSummission} className='form-frame'  >
+
       <div className='form-input-frame'>
-     
-    
+        <br></br>
+        <br></br>
+        <br></br>
       <div>
       
         <label >Neck</label>
       <input type="number" value={neck}  min="35.56" max="57.15"  placeholder='Your chest measurement is between 35.56cm to 57.15cm' onBlur={(inputA)=>{
         if(Number(inputA.target.value < 35.56 || inputA.target.value > 57.15)){
-        setNeck(0)
         alert("Your input should not be less than 35.56cm and not more than 57.15cm")
-          inputA.target.value =""
-          return
+        setNeck(0)
+          return  inputA.target.value =""
       } else{
         setNeck(inputA.target.value)
         
       }}
       
-      }  onChange={handleNeck}/>{neckSize}
+      }  onChange={(e) => handleInputChange(e, handleNeck)} />{neckSize}
       </div>
       
       <div>
         <label >Chest</label>
       <input type="number" value={chest}  min="86.36" max="162.56" placeholder='Your chest measurement is between 86.36cm to 162.56cm' onBlur={(inputB)=>{
         if(Number(inputB.target.value <86.36 || inputB.target.value > 162.56)){
-        setChest(0)
         alert("Your input should not be less than 86.36 and not more than 162.56")
+        setChest(0)
         return inputB.target.value =""
       } else{
        setChest(inputB.target.value)
         
       }}
-      } onChange={handleChest} />{chestSize}
+      } onChange={(e) => handleInputChange(e, handleChest)} /><sapn className="sizes">{chestSize}</sapn>
       </div>
       <div>
       <label>Waist</label>
@@ -282,12 +291,12 @@ const handleFormSummission = async(e) => {
         setWaist(0)
         
         alert("Your input should not be less than 72.12 and not more than 152.4")
-        inputC.target.value =""
+        return inputC.target.value =""
       } else{
        setWaist(inputC.target.value)
         
       }}
-      } onChange={handleWaist}/>{waistSize}
+      } onChange={(e) => handleInputChange(e, handleWaist)}/>{waistSize}
       </div>
 
       <div>
@@ -297,12 +306,12 @@ const handleFormSummission = async(e) => {
         setSleeve(0)
         
         alert("Your input should not be less than 81.28 and not more than 99.79")
-        inputD.target.value =""
+        return inputD.target.value =""
       } else{
        setSleeve(inputD.target.value)
         
       }}
-      } onChange={handleSleeve}/>{sleeveSize}
+      } onChange={(e) => handleInputChange(e, handleSleeve)}/>{sleeveSize}
       </div>
       <div>
 
@@ -312,7 +321,7 @@ const handleFormSummission = async(e) => {
         setInseam(0)
         
         alert("Your input should not be less than 72.1 and not more than 86.36")
-        inputE.target.value =""
+        return inputE.target.value =""
       } else{
        setInseam(inputE.target.value)
         
@@ -321,31 +330,23 @@ const handleFormSummission = async(e) => {
       </div>
      
       <div className='input-file'>
-      {/* <input type="file" accept='image/*' onChange={(e)=>{setImgurl(e.target.files[0])}}></input> */}
-      {/* <input type="file" accept='image/*' onChange={handleImageChange} ></input> */}
       <input type="file" accept='image/*' onChange={handleImgChange} ></input>
       </div>
-      <div><button >image check</button></div>
     
-      
-
-        <button onClick={(e)=>{
+        {/* <button onClick={(e)=>{
           e.preventDefault()
           neckSizeFunc()
           chestSizeFunc()
           waistSizeFunc()
           sleeveSizeFunc()
-          }} style={{height:"40px", backgroundColor:"black", color:"white", fontSize:"20px",margin:"30px 20px"}}>Check Sizes</button>
-      </div>
-      <button type="submit">Add Item</button>
+          }} style={{height:"40px", backgroundColor:"black", color:"white", fontSize:"20px",margin:"30px 20px"}}>Check Sizes</button> */}
 
-
-      {/* Star Rating Section */}
+          {/* Star Rating Section */}
     <div className='star-main-frame'>
       <h3>Rating</h3>
       <div className='stars'>
         {
-          [...Array(6)].map((item, index)=>{
+          [...Array(5)].map((item, index)=>{
             return  <span key={index} 
             className={`${index +1 <= selectedstarcount ? "star-selected" : ""} ${index +1 <= selectedStarOver ? "star-selected" : ""}`}
             onClick={()=>{
@@ -361,18 +362,19 @@ const handleFormSummission = async(e) => {
             >&#9733;</span>
           })
         }
-     
-      
       </div>
-      <div>Rating Count {selectedstarcount}</div>
-      <div>Click Count: {clickcount}</div>
+      <div style={{display:"none"}} >Rating Count: {selectedstarcount}</div>
+      <div style={{display:"none"}}>Click Count: {clickcount}</div>
       <div>Click Count Over: {selectedStarOver}</div>
+      <button type="submit">Save Item</button>
       
     </div>
+
+      </div>
+   
+
+
       
-    <div className='image-display-frame'>
-    <  img src={imgurl} style={{height:"500px", width:"400px"}} />
-    </div>
     </form>
     
     
