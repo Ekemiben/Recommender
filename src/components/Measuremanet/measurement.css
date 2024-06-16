@@ -10,7 +10,7 @@
 .input-frames{
     margin:20px;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     /* border:3px solid rgb(153, 36, 36); */
     justify-content: space-around;
 }

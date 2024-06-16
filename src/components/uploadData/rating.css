@@ -54,7 +54,7 @@ form{
 
 .form-frame{
    
-    border-top:1.5px solid gray;
+    /* border-top:1.5px solid gray; */
     margin-top:60px;
 }
 .form-input-frame {

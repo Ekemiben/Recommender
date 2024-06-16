@@ -1,0 +1,30 @@
+/* MenDashboardDisplay.css */
+
+.data-frame {
+    padding: 20px;
+  }
+  
+  .cat {
+    margin-bottom: 20px;
+  }
+  
+  .item-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust based on screen size */
+    gap: 20px;
+  }
+  
+  .item {
+    border: 0.5px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .item img {
+    width: 100%;
+    height: 200px; /* Fixed height for all images */
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  

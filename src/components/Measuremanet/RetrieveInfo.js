@@ -3,11 +3,12 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { baseURL } from '../../utils/constant';
-import './bmsg.css';
+import './retrieve.css';
 
-const BMSG = () => {
+const RetrieveInfo = () => {
+  const[catImage, setCatImage] = useState([])
   const [imgDisplay, setImgDisplay] = useState([]);
-  const [category, setCategory] =useEffect("");
+  const [category, setCategory] =useState("");
   const [neck, setNeck] = useState('');
   const [chest, setChest] = useState('');
   const [waist, setWaist] = useState('');
@@ -57,6 +58,7 @@ const BMSG = () => {
     });
     const imageUrls = filteredImages.map((item) => `${baseURL}/productsImages/${item.imgurl}`);
     setImgDisplay(imageUrls);
+    catImageDisplay()
   };
   const catImageDisplay = () => {
     const filteredImages = item.filter((itemData) => {
@@ -66,12 +68,12 @@ const BMSG = () => {
         itemData.waist == waist &&
         itemData.sleeve == sleeve &&
         itemData.inseam == inseam &&
-        itemData.selectedstarcount > 3 &&
+        itemData.selectedstarcount > 4 &&
         itemData.category == category
       );
     });
-    const imageUrls = filteredImages.map((item) => `${baseURL}/productsImages/${item.imgurl}`);
-    setImgDisplay(imageUrls);
+    const firstImageUrl = filteredImages.length > 0 ? `${baseURL}/productsImages/${filteredImages[0].imgurl}` : '';
+    setCatImage([firstImageUrl]);
   };
 
   return (
@@ -79,6 +81,26 @@ const BMSG = () => {
       <div className='input-frame'>
      
      <div className='input-box'>
+
+      {/*  */}
+      <select name="Your cloth material" id="Your cloth material" onChange={(option)=>{ 
+        if(option.target.value === "Agbada"){
+          setCategory(option.target.value)
+      } else if (option.target.value === "Casual"){
+        setCategory(option.target.value)
+      }
+       else if (option.target.value === "Senator"){
+        setCategory(option.target.value)
+      }
+       
+         
+        }}>
+        <option > Your cloth material</option>
+          <option value="Agbada">Agbada</option>
+          <option value="Casual">Casual</option>
+          <option value="Senator">Senator</option>
+        </select>
+      {/*  */}
       
             <label >Neck</label>
             <input type="number" value={neck}  min="35.56" max="57.15"  placeholder='Your chest measurement is between 35.56cm to 57.15cm' onBlur={(inputA)=>{
@@ -150,9 +172,25 @@ const BMSG = () => {
             }}
             } onChange={handleInseam}/>
             </div>
+             {/*  */}
+            {/* style={{display:"none"}} */}
+            <div className='recommendations'>
+            {catImage.map((imageUrl, index) => (
+              <div key={index} className='items'>
+                <div className='img-fluid'>
+                  <img src={imageUrl} alt={`Item ${index}`} />
+                </div>
+              </div>
+            ))}
+          </div>
+            {/*  */}
             <button onClick={imageDisplay}>Recommend</button>
-            <button onClick={catImageDisplay} style={{display:"none"}}>Category Recommend</button>
+            {/* <button onClick={catImageDisplay} >Category Recommend</button> */}
             </div>
+           
+
+
+
      
       <div className='recommendations'>
         {imgDisplay.map((imageUrl, index) => (
@@ -167,4 +205,4 @@ const BMSG = () => {
   );
 };
 
-export default BMSG;
+export default RetrieveInfo;

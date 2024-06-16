@@ -27,7 +27,7 @@ const Landing = () => {
       </datalist> */}
 
         
-        <select name="Your cloth material" id="Your cloth material" onChange={(option)=>{categoriesDisplay() 
+      <select name="Your cloth material" id="Your cloth material" onChange={(option)=>{categoriesDisplay() 
         if(option.target.value === "men"){
           return window.location = "/men"
       } if (option.target.value === "women"){

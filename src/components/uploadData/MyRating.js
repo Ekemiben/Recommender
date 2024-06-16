@@ -12,6 +12,7 @@ const MyRating = () => {
   const [clickcount, setClickCount] = useState(0)
 
 // Input values
+const [category, setCategory] =useState("");
 const [neck, setNeck] = useState()
 const [chest, setChest] = useState()
 const [waist, setWaist] = useState()
@@ -199,6 +200,7 @@ const handleFormSummission = async(e) => {
   e.preventDefault();
   const formData = new FormData();
 
+  formData.append('category', category);
   formData.append('neck', neck);
   formData.append('chest', chest);
   formData.append('waist', waist);
@@ -233,23 +235,31 @@ const handleInputChange = (e, handlerFunc) => {
  
   return (
     <>
-    <div className='selection'><br></br><h1>You Selected {`${selected}`}</h1> <br></br>
+     <form onSubmit={handleFormSummission} className='form-frame'  >
+
+    <div className='selection'><br></br><h1>You Selected {`${category}`}</h1> <br></br>
         <select name="Your cloth material" id="Your cloth material" onChange={(option)=>{ 
-        if(option.target.value === "women"){
-          setSelected(option.target.value)
-         
+        if(option.target.value === "Agbada"){
+          setCategory(option.target.value)
       } 
-       if (option.target.value === "men"){
-        setSelected(option.target.value)
+       if (option.target.value === "Casual"){
+        setCategory(option.target.value)
       } 
-        }}>
+       if (option.target.value === "Senator"){
+        setCategory(option.target.value)
+      } 
+        }} onBlur={(option)=>{ 
+          if(category !== "Agbada" || category !== "Casual" || category !== "Senator"){
+            alert("You have to select a category")
+            }}}>
         <option > Your clothes material</option>
-          <option value="men">Men</option>
-          <option value="women">Women</option>
+          <option value="Agbada">Agbada</option>
+          <option value="Casual">Casual</option>
+          <option value="Senator">Senator</option>
           
         </select>
         </div>
-    <form onSubmit={handleFormSummission} className='form-frame'  >
+   
 
       <div className='form-input-frame'>
         <br></br>

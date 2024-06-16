@@ -54,7 +54,7 @@ const LoginForm = () => {
         const token = response.data.token;
         localStorage.setItem('token', token);
        return window.location = "/upload"
-        // <Link to={'/upload'} ></Link>
+    
       } else {
         setError("Either your email or password is incorrect");
         <Link to={'/login'} ></Link>
