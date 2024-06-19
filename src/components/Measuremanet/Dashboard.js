@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './dashboard.css';
-import MyRating from '../uploadData/MyRating';
-import MenDashboard from './MenDashboard';
+import MyRating from '../uploadData/MenUpload';
+import MenDashboard from './MenDashboard/MenDashboard';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
     const [category, setCategory] =useState()
@@ -20,7 +21,7 @@ const Dashboard = () => {
             <div className="info-item">Email: johndoe@example.com</div>
            
             <div>
-            <select name="Your cloth material" id="Your cloth material" onChange={(option)=>{ 
+            <select className='left-pan-select' name="Your cloth material" id="Your cloth material" onChange={(option)=>{ 
         if(option.target.value === "men"){
           setCategory(option.target.value)
       } else if (option.target.value === "women"){
@@ -32,7 +33,20 @@ const Dashboard = () => {
           <option value="women">Women</option>
         </select>
 
-        <div className="info-item"><button>Add Items</button></div>
+      <button onClick={() => { 
+        // Your logic here, if needed
+        // For navigation, you typically use the 'history' object from React Router
+        // Example: history.push('/upload');
+      }}>
+        <Link to="/upload" style={{textDecoration: "none", color:"black"}}>Add Men Item</Link>
+      </button>
+      <button onClick={() => { 
+        // Your logic here, if needed
+        // For navigation, you typically use the 'history' object from React Router
+        // Example: history.push('/upload');
+      }}>
+        <Link to="/upload" style={{textDecoration: "none", color:"black"}}>Add Women Item</Link>
+      </button>
             </div>
           </div>
         </div>

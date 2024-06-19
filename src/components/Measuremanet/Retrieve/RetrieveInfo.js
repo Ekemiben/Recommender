@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { baseURL } from '../../utils/constant';
+import { baseURL } from '../../../utils/constant';
 import './retrieve.css';
 
 const RetrieveInfo = () => {
@@ -15,6 +15,8 @@ const RetrieveInfo = () => {
   const [sleeve, setSleeve] = useState('');
   const [inseam, setInseam] = useState('');
   const [item, setItem] = useState([]);
+
+  const [info, setInfo] = useState("The clothe that will be shoing below is one of the most rated clothes in this category.As a recommender system I guess this will fit you.")
 
   useEffect(() => {
     fetchData();
@@ -78,6 +80,7 @@ const RetrieveInfo = () => {
 
   return (
     <div className='main-frame'>
+      <div className='input-frame-cat-fram'>
       <div className='input-frame'>
      
      <div className='input-box'>
@@ -95,13 +98,14 @@ const RetrieveInfo = () => {
        
          
         }}>
-        <option > Your cloth material</option>
+        <option > Select your category</option>
           <option value="Agbada">Agbada</option>
           <option value="Casual">Casual</option>
           <option value="Senator">Senator</option>
         </select>
       {/*  */}
-      
+      {/* <hr></hr> */}
+      <br></br><br></br>
             <label >Neck</label>
             <input type="number" value={neck}  min="35.56" max="57.15"  placeholder='Your chest measurement is between 35.56cm to 57.15cm' onBlur={(inputA)=>{
               if(Number(inputA.target.value < 35.56 || inputA.target.value > 57.15)){
@@ -172,11 +176,20 @@ const RetrieveInfo = () => {
             }}
             } onChange={handleInseam}/>
             </div>
-             {/*  */}
+            
+            <button onClick={imageDisplay}>Recommend</button>
+            {/* <button onClick={catImageDisplay} >Category Recommend</button> */}
+      </div>
+       {/*  */}
             {/* style={{display:"none"}} */}
-            <div className='recommendations'>
+            <div className='cat-recommendation'>
+              <div className='des'>
+                <p>{info}</p>
+                
+              </div>
+              <hr></hr>
             {catImage.map((imageUrl, index) => (
-              <div key={index} className='items'>
+              <div key={index} className='cat-items'>
                 <div className='img-fluid'>
                   <img src={imageUrl} alt={`Item ${index}`} />
                 </div>
@@ -184,14 +197,14 @@ const RetrieveInfo = () => {
             ))}
           </div>
             {/*  */}
-            <button onClick={imageDisplay}>Recommend</button>
-            {/* <button onClick={catImageDisplay} >Category Recommend</button> */}
-            </div>
+      </div>
            
 
 
-
-     
+            <div className='rec-heading'>
+            <h3>Recommendation Section</h3>
+            </div>
+    
       <div className='recommendations'>
         {imgDisplay.map((imageUrl, index) => (
           <div key={index} className='items'>

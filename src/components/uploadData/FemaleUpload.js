@@ -4,7 +4,7 @@ import './rating.css'
 import { baseURL } from '../../utils/constant';
 
 
-const MyRating = () => {
+const FemaleUpload = () => {
   // Star Rating
   const [selected, setSelected] = useState("");
   const [selectedstarcount, setSelectedStarCount] = useState(0);
@@ -13,76 +13,46 @@ const MyRating = () => {
 
 // Input values
 const [category, setCategory] =useState("");
-const [neck, setNeck] = useState()
-const [chest, setChest] = useState()
+const [bust, setBust] = useState()
 const [waist, setWaist] = useState()
-const [sleeve, setSleeve] = useState()
+const [hips, setHips] = useState()
 const [imgurl, setImgurl] = useState(null)
 const [inseam, setInseam] = useState()
 
 
 // Sizes inpute
-const [neckSize, setNeckSize] = useState()
 const [chestSize, setChestSize] = useState()
+const [bustSize, setBustSize] = useState()
 const [waistSize, setWaistSize] = useState()
 const [sleeveSize, setSleeveSize] = useState()
+const [hipsSize, setHipsSize] = useState()
 
 
-function neckSizeFunc(){
-  
-  if(neck >=35.56 && neck < 38.1){
-    setNeckSize("S") 
+function bustSizeFunc(){
+  if(bust >=86.36 && bust < 96.52){
+    setBustSize("S")
   }
-  if(neck >=38.1 && neck < 40.64){
-    setNeckSize("M")
+  if(bust >=96.52 && bust< 106.68){
+    setBustSize("M")
   }
-  if(neck >= 40.64 && neck < 43.18){
-    setNeckSize("L")
+  if(bust >= 106.68 && bust < 116.84){
+    setBustSize("L")
   }
-  if(neck >= 43.18 && neck < 45.72){
-    setNeckSize("XL")
+  if(bust >= 116.84 && bust < 127){
+    setBustSize("XL")
   }
-  if(neck >= 45.72 && neck < 48.26){
-    setNeckSize("2XL")
+  if(bust >= 127 && bust < 137.16){
+    setBustSize("2XL")
   }
-  if(neck >= 48.26 && neck <50.8){
-    setNeckSize("3XL")
+  if(bust >= 137.16 && bust< 152.4){
+    setBustSize("3XL")
   }
-  if(neck >= 50.8 && neck < 53.34){
-    setNeckSize("4XL")
+  if(bust >= 152.4 && bust < 53.34){
+    setBustSize("4XL")
   }
-  if(neck >= 53.34 && neck <= 57.15){
-    setNeckSize("5XL")
+  if(bust>= 157.48 && bust <= 162.56){
+    setBustSize("5XL")
   }
- 
-}
-function chestSizeFunc(){
-  if(chest >=86.36 && chest < 96.52){
-    setChestSize("S")
-  }
-  if(chest >=96.52 && chest < 106.68){
-    setChestSize("M")
-  }
-  if(chest >= 106.68 && chest < 116.84){
-    setChestSize("L")
-  }
-  if(chest >= 116.84 && chest < 127){
-    setChestSize("XL")
-  }
-  if(chest >= 127 && chest < 137.16){
-    setChestSize("2XL")
-  }
-  if(chest >= 137.16 && chest < 152.4){
-    setChestSize("3XL")
-  }
-  if(chest >= 152.4 && chest < 53.34){
-    setChestSize("4XL")
-  }
-  if(chest >= 157.48 && chest <= 162.56){
-    setChestSize("5XL")
-  }
-
- 
 }
 
 function waistSizeFunc(){
@@ -137,46 +107,44 @@ function waistSizeFunc(){
     setWaistSize("5XL")
   } 
 }
-function sleeveSizeFunc(){
-  if(sleeve >=81.28 && sleeve < 83.82){
+
+function hipsSizeFunc(){
+  if(hips >=81.28 && hips < 83.82){
     setSleeveSize("S")
   }
-  if(sleeve >=83.82 && sleeve < 86.36){
+  if(hips >=83.82 && hips < 86.36){
     setSleeveSize("M")
   }
-  if(sleeve >= 86.36 && sleeve < 88.9){
+  if(hips >= 86.36 && hips < 88.9){
     setSleeveSize("L")
   }
-  if(sleeve >= 88.9 && sleeve < 91.44 ){
+  if(hips >= 88.9 && hips < 91.44 ){
     setSleeveSize("XL")
   }
-  if(sleeve >= 91.44 && sleeve < 93.98){
+  if(hips >= 91.44 && hips < 93.98){
     setSleeveSize("2XL")
   }
-  if(sleeve >= 93.98 && sleeve < 96.52){
+  if(hips >= 93.98 && hips < 96.52){
     setSleeveSize("3XL")
   }
-  if(sleeve >= 96.52 && sleeve < 97.79){
+  if(hips >= 96.52 && hips < 97.79){
     setSleeveSize("4XL")
   }
-  if(sleeve >= 97.79 && sleeve <= 99.06){
+  if(hips >= 97.79 && hips <= 99.06){
     setSleeveSize("5XL")
   } 
 }
 
 
   //  Form input functions
-const handleNeck = (e) => {
-  setNeck(e.target.value);
-};
-const handleChest = (e) => {
-  setChest(e.target.value);
+const handleBust = (e) => {
+  setBust(e.target.value);
 };
 const handleWaist = (e) => {
   setWaist(e.target.value);
 };
-const handleSleeve = (e) => {
-  setSleeve(e.target.value);
+const handleHips = (e) => {
+  setHips(e.target.value);
 };
 const handleInseam = (e) => {
   setInseam(e.target.value);
@@ -201,17 +169,16 @@ const handleFormSummission = async(e) => {
   const formData = new FormData();
 
   formData.append('category', category);
-  formData.append('neck', neck);
-  formData.append('chest', chest);
+  formData.append('bust', bust);
   formData.append('waist', waist);
-  formData.append('sleeve', sleeve);
+  formData.append('hips', hips);
   formData.append('inseam', inseam);
   formData.append('imgurl', imgurl); // Correctly append the image URL or data
   formData.append('clickcount', clickcount);
   formData.append('selectedstarcount', selectedstarcount);
 
   try {
-    const response = await axios.post(`${baseURL}/savedItem`, formData, {
+    const response = await axios.post(`${baseURL}/savedWomenItem`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -226,80 +193,64 @@ const handleFormSummission = async(e) => {
 
 const handleInputChange = (e, handlerFunc) => {
   handlerFunc(e);
-  neckSizeFunc();
-  chestSizeFunc();
+  bustSizeFunc();
   waistSizeFunc();
-  sleeveSizeFunc();
+  hipsSizeFunc();
 };
 
+const handleChange = (event) => {
+  setCategory(event.target.value);
+};
+
+const handleBlur = () => {
+  if (category !== "Agbada" && category !== "Casual" && category !== "Senator") {
+    alert("You have to select a category");
+    // Optionally, you can reset the category state here
+    // setCategory('');
+  }
+};
  
   return (
     <>
      <form onSubmit={handleFormSummission} className='form-frame'  >
 
     <div className='selection'><br></br><h1>You Selected {`${category}`}</h1> <br></br>
-        <select name="Your cloth material" id="Your cloth material" onChange={(option)=>{ 
-        if(option.target.value === "Agbada"){
-          setCategory(option.target.value)
-      } 
-       if (option.target.value === "Casual"){
-        setCategory(option.target.value)
-      } 
-       if (option.target.value === "Senator"){
-        setCategory(option.target.value)
-      } 
-        }} onBlur={(option)=>{ 
-          if(category !== "Agbada" || category !== "Casual" || category !== "Senator"){
-            alert("You have to select a category")
-            }}}>
-        <option > Your clothes material</option>
-          <option value="Agbada">Agbada</option>
-          <option value="Casual">Casual</option>
-          <option value="Senator">Senator</option>
-          
-        </select>
-        </div>
-   
+    <select
+      name="Your cloth material"
+      id="Your-cloth-material"
+      value={category}
+      onChange={handleChange}
+      onBlur={handleBlur}
+    >
+      <option value="">Your clothes material</option>
+      <option value="Agbada">Agbada</option>
+      <option value="Casual">Casual</option>
+      <option value="Senator">Senator</option>
+    </select>
+    </div>
 
       <div className='form-input-frame'>
         <br></br>
         <br></br>
         <br></br>
       <div>
-      
-        <label >Neck</label>
-      <input type="number" value={neck}  min="35.56" max="57.15"  placeholder='Your chest measurement is between 35.56cm to 57.15cm' onBlur={(inputA)=>{
-        if(Number(inputA.target.value < 35.56 || inputA.target.value > 57.15)){
-        alert("Your input should not be less than 35.56cm and not more than 57.15cm")
-        setNeck(0)
-          return  inputA.target.value =""
-      } else{
-        setNeck(inputA.target.value)
-        
-      }}
-      
-      }  onChange={(e) => handleInputChange(e, handleNeck)} />{neckSize}
-      </div>
-      
-      <div>
-        <label >Chest</label>
-      <input type="number" value={chest}  min="86.36" max="162.56" placeholder='Your chest measurement is between 86.36cm to 162.56cm' onBlur={(inputB)=>{
+        <label >Bust</label>
+      <input type="number" value={bust}  min="86.36" max="162.56" placeholder='Your chest measurement is between 86.36cm to 162.56cm' onBlur={(inputB)=>{
         if(Number(inputB.target.value <86.36 || inputB.target.value > 162.56)){
         alert("Your input should not be less than 86.36 and not more than 162.56")
-        setChest(0)
+        setBust(86.36)
         return inputB.target.value =""
       } else{
-       setChest(inputB.target.value)
+       setBust(inputB.target.value)
         
       }}
-      } onChange={(e) => handleInputChange(e, handleChest)} /><sapn className="sizes">{chestSize}</sapn>
+      } onChange={(e) => handleInputChange(e, handleBust)} /><sapn className="sizes">{chestSize}</sapn>
       </div>
       <div>
       <label>Waist</label>
       <input type="number" value={waist}  min="72.12" max="152.4"  placeholder='Input your waist measurement between 72.12cm to 152.4cm' onBlur={(inputC)=>{
         if(Number(inputC.target.value <72.12 || inputC.target.value> 152.4)){
-        setWaist(0)
-        
+        setWaist(72.12)
         alert("Your input should not be less than 72.12 and not more than 152.4")
         return inputC.target.value =""
       } else{
@@ -310,25 +261,25 @@ const handleInputChange = (e, handlerFunc) => {
       </div>
 
       <div>
-      <label>Sleeve</label>
-      <input type="number" value={sleeve}  min="81.28" max="99.79" placeholder='Your sleeve measurement is between 81.28cm to 99.79cm' onBlur={(inputD)=>{
+      <label>Hips</label>
+      <input type="number" value={hips}  min="81.28" max="99.79" placeholder='Your hips  measurement is between 81.28cm to 99.79cm' onBlur={(inputD)=>{
         if(Number(inputD.target.value <81.28 || inputD.target.value> 99.79)){
-        setSleeve(0)
+        setHips(81.28)
         
         alert("Your input should not be less than 81.28 and not more than 99.79")
         return inputD.target.value =""
       } else{
-       setSleeve(inputD.target.value)
+       setHips(inputD.target.value)
         
       }}
-      } onChange={(e) => handleInputChange(e, handleSleeve)}/>{sleeveSize}
+      } onChange={(e) => handleInputChange(e, handleHips)}/>{sleeveSize}
       </div>
       <div>
 
       <label>Inseam</label>
       <input type="number" value={inseam}  min="72.12" max="86.36" placeholder='Your inseam measurement is between 72.12cm to 86.36cm' onBlur={(inputE)=>{
         if(Number(inputE.target.value <72.1 || inputE.target.value> 86.36)){
-        setInseam(0)
+        setInseam(72.1)
         
         alert("Your input should not be less than 72.1 and not more than 86.36")
         return inputE.target.value =""
@@ -343,13 +294,7 @@ const handleInputChange = (e, handlerFunc) => {
       <input type="file" accept='image/*' onChange={handleImgChange} ></input>
       </div>
     
-        {/* <button onClick={(e)=>{
-          e.preventDefault()
-          neckSizeFunc()
-          chestSizeFunc()
-          waistSizeFunc()
-          sleeveSizeFunc()
-          }} style={{height:"40px", backgroundColor:"black", color:"white", fontSize:"20px",margin:"30px 20px"}}>Check Sizes</button> */}
+        
 
           {/* Star Rating Section */}
     <div className='star-main-frame'>
@@ -393,4 +338,5 @@ const handleInputChange = (e, handlerFunc) => {
   )
 }
 
-export default MyRating
+export default FemaleUpload
+
