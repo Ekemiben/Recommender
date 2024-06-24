@@ -3,11 +3,18 @@ import './dashboard.css';
 import MyRating from '../uploadData/MenUpload';
 import MenDashboard from './MenDashboard/MenDashboard';
 import { Link } from 'react-router-dom';
+import WomenDashboard from './WomenDashboard/WomenDashboard';
 
 const Dashboard = () => {
     const [category, setCategory] =useState()
+    const relaodFunct = (e)=>{
+      e.preventDefault()
+    }
   return (
     <div className="dashboard">
+      <form onChange={relaodFunct}>
+
+      
       <div className="top">
         <div className="card">Senator</div>
         <div className="card">Casual</div>
@@ -45,7 +52,7 @@ const Dashboard = () => {
         // For navigation, you typically use the 'history' object from React Router
         // Example: history.push('/upload');
       }}>
-        <Link to="/upload" style={{textDecoration: "none", color:"black"}}>Add Women Item</Link>
+        <Link to="/womenupload" style={{textDecoration: "none", color:"black"}}>Add Women Item</Link>
       </button>
             </div>
           </div>
@@ -53,11 +60,12 @@ const Dashboard = () => {
         <div className="right-form">
           <form className="form">
             
-            {category === "men" ? <MenDashboard /> : ""}
+            {category === "men" ? <MenDashboard /> : <WomenDashboard />}
             
           </form>
         </div>
       </div>
+      </form>
     </div>
   );
 };

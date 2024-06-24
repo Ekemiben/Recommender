@@ -158,7 +158,7 @@ const MenDashboardDisplay = () => {
               </div>
               <div className='btn'>
                 <button style={{ background: "#ff4141" }} onClick={() => handleDelete(itemData._id)}>Delete</button>
-                <button  style={{ background: "green" }}><Link to='/edititem'>Edit</Link></button>
+                <button style={{color: "#fff"}} ><Link to='/edititem'  style={{ background: "#007BFF", textDecoration: "none", color:"#fff"}}>Edit</Link></button>
               </div>
             </div>
           ))}

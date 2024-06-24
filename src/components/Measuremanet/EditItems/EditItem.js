@@ -1,10 +1,8 @@
-
-
 import axios from 'axios';
 import React, { useState } from 'react';
 import { baseURL } from '../../../utils/constant';
 
-const YourFormComponent = () => {
+const YourFormComponent = (props) => {
   // State variables
   const [category, setCategory] = useState('');
   const [neck, setNeck] = useState('');
@@ -17,8 +15,8 @@ const YourFormComponent = () => {
   const [selectedStarOver, setSelectedStarOver] = useState(0);
 
   // Input change handler
-  const handleChange = (e) => {
-    setCategory(e.target.value);
+  const handleChange = () => {
+    // setCategory(e.target.value);
   };
 
   // Blur handler for validation
@@ -37,46 +35,9 @@ const YourFormComponent = () => {
     // Handle file upload logic here
   };
 
-  // // Form submission handler
-  // const handleFormSubmission = async (e) => {
-  //   e.preventDefault();
-  //   // Handle form submission logic here (e.g., sending data to backend)
-  //   // Example:
-  //   const formData = {
-  //     category,
-  //     neck,
-  //     chest,
-  //     waist,
-  //     sleeve,
-  //     inseam,
-  //     selectedstarcount,
-  //     clickcount,
-  //     selectedStarOver
-  //   };
-  //   console.log(formData);
-  //   // Make your API call or handle form data as required
-  //   if(formData){
-  //   try {
-  //     const updateItem = await axios.post(`${baseURL}/updateSavedItem`, formData, {
-  //       headers: {
-  //         'Content-Type': 'multipart/form-data'
-  //       }
-  //     });
-
-  //     }catch(error){
-  //       console.log("The update is was not successful", error)
-  //     }
-  //   }
-
-  // };
 
   const handleFormSubmission = async (e) => {
     e.preventDefault();
-  
-    // Generate a unique ID (UUID)
-    // const uniqueId = generateUUID();
-  
-    // Example of formData including the uniqueId
     const formData = {
       // id: uniqueId,  // Include the unique ID in your formData
       category,
@@ -94,7 +55,7 @@ const YourFormComponent = () => {
   
     // Make your API call or handle form data as required
     try {
-      const updateItem = await axios.post(`${baseURL}/updateSavedItem`, formData, {
+      const updateItem = await axios.put(`${baseURL}/updateSavedItem`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -122,7 +83,7 @@ const YourFormComponent = () => {
         <select
           name="Your cloth material"
           id="Your-cloth-material"
-          value={category}
+          value={props.category}
           onChange={handleChange}
           onBlur={handleBlur}
         >
@@ -138,7 +99,7 @@ const YourFormComponent = () => {
           <label>Neck</label>
           <input
             type="number"
-            value={neck}
+            value={props.burst}
             min="35.56"
             max="57.15"
             placeholder='Your chest measurement is between 35.56cm to 57.15cm'

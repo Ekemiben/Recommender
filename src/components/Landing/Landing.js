@@ -14,37 +14,13 @@ const Landing = () => {
     }
   }
   return (
-    <div style={{display:"flex", justifyContent:"center"}}>
-      <div className='boxes'>
+    
+    <div className='main-frame'>
+      <div className=''>
 
-      {/* <input list="clothsize" />
-      <datalist id="clothsize"  >
-        <option value="12h X 9m" />
-        <option value="Firefox" />
-        <option value="Chrome" />
-        <option value="Opera" />
-        <option value="Safari" />
-      </datalist> */}
+      </div>
+      <div className=''>
 
-        
-      <select name="Your cloth material" id="Your cloth material" onChange={(option)=>{categoriesDisplay() 
-        if(option.target.value === "men"){
-          return window.location = "/men"
-      } if (option.target.value === "women"){
-        return window.location = "/women"
-      }
-       if (option.target.value === "kids"){
-        return window.location = "/kids"
-      }
-       
-         
-        }}>
-        <option > Your cloth material</option>
-          <option value="men">Men</option>
-          <option value="women">Women</option>
-          <option value="kids">Kids & Teens</option>
-        </select>
-        
       </div>
 
     </div>

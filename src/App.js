@@ -11,6 +11,9 @@ import Dashboard from './components/Measuremanet/Dashboard';
 import PrivateRoute from './components/LogingSignup/PrivateRoute';
 import EditItem from "./components/Measuremanet/EditItems/EditItem"
 import FemaleUpload from './components/uploadData/FemaleUpload';
+import WomenRetrieveInfo from './components/Measuremanet/Retrieve/WomenRetrieve';
+import Footer from './components/Footer/Footer';
+import WomenDashboard from './components/Measuremanet/WomenDashboard/WomenDashboard';
 
 
 function App() {
@@ -28,8 +31,8 @@ function App() {
           {/* <Route path='/' element={<Landing />}/> */}
           {/* <Route path='/' element={<Senatorlong />}/> */}
           <Route path='/' element={<BMSG />}/>
-          {/* <Route path='/women' element={<Women />}/>
-          <Route path='/kids' element={<BMSG />}/> */}
+           <Route path='/women' element={<WomenRetrieveInfo />}/>
+         {/* <Route path='/kids' element={<BMSG />}/> */}
           <Route path='/loginsignup' element={<LoginSignup />}/>
           
           <Route exact path='/upload' element={<UploadForm />} />
@@ -37,7 +40,9 @@ function App() {
           
           <Route path='/dashboard' element={<Dashboard />}/>
           <Route path='/edititem' element={<EditItem />}/>
+          <Route path='/womendashboard' element={<WomenDashboard />}/>
         </Routes>
+        {/* <Footer /> */}
       </BrowserRouter>
     </div>
   );
