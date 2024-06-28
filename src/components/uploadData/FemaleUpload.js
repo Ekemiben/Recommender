@@ -13,7 +13,7 @@ const FemaleUpload = () => {
 
 // Input values
 const [category, setCategory] =useState("");
-const [bust, setBust] = useState()
+const [burst, setBurst] = useState()
 const [waist, setWaist] = useState()
 const [hips, setHips] = useState()
 const [imgurl, setImgurl] = useState(null)
@@ -22,36 +22,36 @@ const [inseam, setInseam] = useState()
 
 // Sizes inpute
 const [chestSize, setChestSize] = useState()
-const [bustSize, setBustSize] = useState()
+const [burstSize, setBurstSize] = useState()
 const [waistSize, setWaistSize] = useState()
 const [sleeveSize, setSleeveSize] = useState()
 const [hipsSize, setHipsSize] = useState()
 
 
-function bustSizeFunc(){
-  if(bust >=86.36 && bust < 96.52){
-    setBustSize("S")
+function burstSizeFunc(){
+  if(burst >=86.36 && burst < 96.52){
+    setBurstSize("S")
   }
-  if(bust >=96.52 && bust< 106.68){
-    setBustSize("M")
+  if(burst >=96.52 && burst< 106.68){
+    setBurstSize("M")
   }
-  if(bust >= 106.68 && bust < 116.84){
-    setBustSize("L")
+  if(burst >= 106.68 && burst < 116.84){
+    setBurstSize("L")
   }
-  if(bust >= 116.84 && bust < 127){
-    setBustSize("XL")
+  if(burst >= 116.84 && burst < 127){
+    setBurstSize("XL")
   }
-  if(bust >= 127 && bust < 137.16){
-    setBustSize("2XL")
+  if(burst >= 127 && burst < 137.16){
+    setBurstSize("2XL")
   }
-  if(bust >= 137.16 && bust< 152.4){
-    setBustSize("3XL")
+  if(burst >= 137.16 && burst< 152.4){
+    setBurstSize("3XL")
   }
-  if(bust >= 152.4 && bust < 53.34){
-    setBustSize("4XL")
+  if(burst >= 152.4 && burst < 53.34){
+    setBurstSize("4XL")
   }
-  if(bust>= 157.48 && bust <= 162.56){
-    setBustSize("5XL")
+  if(burst>= 157.48 && burst <= 162.56){
+    setBurstSize("5XL")
   }
 }
 
@@ -137,8 +137,8 @@ function hipsSizeFunc(){
 
 
   //  Form input functions
-const handleBust = (e) => {
-  setBust(e.target.value);
+const handleBurst = (e) => {
+  setBurst(e.target.value);
 };
 const handleWaist = (e) => {
   setWaist(e.target.value);
@@ -169,7 +169,7 @@ const handleFormSummission = async(e) => {
   const formData = new FormData();
 
   formData.append('category', category);
-  formData.append('bust', bust);
+  formData.append('burst', burst);
   formData.append('waist', waist);
   formData.append('hips', hips);
   formData.append('inseam', inseam);
@@ -193,7 +193,7 @@ const handleFormSummission = async(e) => {
 
 const handleInputChange = (e, handlerFunc) => {
   handlerFunc(e);
-  bustSizeFunc();
+  burstSizeFunc();
   waistSizeFunc();
   hipsSizeFunc();
 };
@@ -234,17 +234,17 @@ const handleBlur = () => {
         <br></br>
         <br></br>
       <div>
-        <label >Bust</label>
-      <input type="number" value={bust}  min="86.36" max="162.56" placeholder='Your chest measurement is between 86.36cm to 162.56cm' onBlur={(inputB)=>{
+        <label >Burst</label>
+      <input type="number" value={burst}  min="86.36" max="162.56" placeholder='Your chest measurement is between 86.36cm to 162.56cm' onBlur={(inputB)=>{
         if(Number(inputB.target.value <86.36 || inputB.target.value > 162.56)){
         alert("Your input should not be less than 86.36 and not more than 162.56")
-        setBust(86.36)
+        setBurst(86.36)
         return inputB.target.value =""
       } else{
-       setBust(inputB.target.value)
+       setBurst(inputB.target.value)
         
       }}
-      } onChange={(e) => handleInputChange(e, handleBust)} /><sapn className="sizes">{chestSize}</sapn>
+      } onChange={(e) => handleInputChange(e, handleBurst)} /><sapn className="sizes">{chestSize}</sapn>
       </div>
       <div>
       <label>Waist</label>

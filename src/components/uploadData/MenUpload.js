@@ -340,9 +340,8 @@ const handleBlur = () => {
       <label>Inseam</label>
       <input type="number" value={inseam}  min="72.12" max="86.36" placeholder='Your inseam measurement is between 72.12cm to 86.36cm' onBlur={(inputE)=>{
         if(Number(inputE.target.value <72.1 || inputE.target.value> 86.36)){
-        setInseam(0)
-        
         alert("Your input should not be less than 72.1 and not more than 86.36")
+        setInseam(0)
         return inputE.target.value =""
       } else{
        setInseam(inputE.target.value)

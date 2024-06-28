@@ -3,17 +3,26 @@ import axios from 'axios';
 import { baseURL } from '../../../utils/constant';
 import './womendashboard.css'; // Import your CSS file
 import { Link } from 'react-router-dom';
-import EditItem from '../EditItems/EditItem'
+import EditItem from '../EditItems/WomenEdit'
 
 // Modal
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 // Modal end
 
 const WomenDashboard = () => {
   const [items, setItems] = useState([]);
   const [category, setCategory] = useState('');
   const [imgDisplay, setImgDisplay] = useState([]);
+
+
+  // Modal
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  // End Modal
 
   useEffect(() => {
     fetchData();
@@ -32,18 +41,6 @@ const WomenDashboard = () => {
     setCategory(event.target.value);
   };
 
-  
-
-  // const{id, imgurl, } = items
-  // Function to handle opening modal and copying data based on item ID
-  const handleOpenModal = (itemId) => {
-
-    const selectedItem = items.find(item => item.id === itemId);
-    if (selectedItem) {
-      // Copy the selected item's data to modalData state
-      // setModalData(selectedItem);
-    }
-  };
 
   const handleDelete = async (id) => {
     try {
@@ -63,7 +60,7 @@ const WomenDashboard = () => {
   const handleUpdate = (props)=>{
     return (
       <div  >
-       {items.map((item, index)=>{
+       {/* {items.map((item, index)=>{
         return(
           <EditItem key={index} id={item._id} category={item.category} burst={item.burst} waist={item.waist} hips={item.hips} inseam={item.inseam} image={item.imgurl} starRate={item.selectedstarcount}  />
           
@@ -71,11 +68,16 @@ const WomenDashboard = () => {
       
        })}
        
-       {window.location="/edititem"}
+       {window.location="/edititem"} */}
+      
       </div>
     )
   }
+  
 
+
+
+  
 
   return (
     <div className='data-frame'>
@@ -114,7 +116,7 @@ const WomenDashboard = () => {
               </div>
               <div className='btn'>
                 <button style={{ background: "#ff4141" }} onClick={() => handleDelete(itemData._id)}>Delete</button>
-                <button style={{ background: "#007BFF", color:"#fff"}} onClick={()=>handleUpdate()} > Edit</button>
+                <button><Link to={`/womenedititem/${itemData._id}`} style={{ background: "#007BFF", color:"#fff", textDecoration:"none"}} onClick={(itemData._id)} > Edit</Link></button>
               </div>
             </div>
           ))}

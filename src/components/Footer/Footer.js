@@ -11,9 +11,9 @@ const Footer = () => {
         // background:"green",
         // color:"#fff"
     }}>
-      <Footer>
+      <div>
         <h1>@ All reight reserve</h1>
-      </Footer>
+      </div>
     </div>
   )
 }

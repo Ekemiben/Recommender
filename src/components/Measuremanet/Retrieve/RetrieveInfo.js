@@ -4,6 +4,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { baseURL } from '../../../utils/constant';
 import './retrieve.css';
+import { Link } from 'react-router-dom';
 
 const RetrieveInfo = () => {
   const[catImage, setCatImage] = useState([])
@@ -203,6 +204,7 @@ const RetrieveInfo = () => {
 
             <div className='rec-heading'>
             <h3>Recommendation Section</h3>
+            <button><Link to='/feedback' style={{textDecoration:"none",color:"white"}}> Feedback</Link></button>
             </div>
     
       <div className='recommendations'>
