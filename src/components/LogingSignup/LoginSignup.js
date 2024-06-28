@@ -48,7 +48,7 @@ const LoginForm = () => {
       if (response.data.success) {
         const token = response.data.token;
         localStorage.setItem('token', token);
-       return window.location = "/upload"
+       return window.location = "/dashboard"
     
       } else {
         setError("Either your email or password is incorrect");
@@ -84,7 +84,7 @@ const LoginForm = () => {
         </div>
         {error && <p className="error">{error}</p>}
         <button type="submit">Login</button>
-        <p className='login-signup-login'>You don't have an account? <Link to="/signup">Signup Here</Link></p>
+        <p className='login-signup-login'>You don't have an account? <Link to="/">Signup Here</Link></p>
         <div className='login-signup-agree'>
           <input type='checkbox' name='' id='' />
           <p>By continuing, I agree to the terms of use & privacy policy</p>

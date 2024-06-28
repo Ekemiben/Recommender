@@ -184,11 +184,11 @@ const RetrieveInfo = () => {
        {/*  */}
             {/* style={{display:"none"}} */}
             <div className='cat-recommendation'>
-              <div className='des'>
+              <div className='recommender-info'>
                 <p>{info}</p>
                 
               </div>
-              <hr></hr>
+             
             {catImage.map((imageUrl, index) => (
               <div key={index} className='cat-items'>
                 <div className='img-fluid'>

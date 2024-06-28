@@ -1,0 +1,14 @@
+
+.main-footer{
+    display:flex;
+    justify-content:center;
+    justify-items:center;
+    height:150px;
+    width:100vw;
+    background:"green";
+    color:"#fff";
+    background-color: azure;
+}
+.main-footer h1{
+    margin: 60px auto;
+}

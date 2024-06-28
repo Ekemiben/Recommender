@@ -4,6 +4,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { baseURL } from '../../../utils/constant';
 import './retrieve.css';
+import { Link } from 'react-router-dom';
 
 const WomenRetrieveInfo = () => {
   const[catImage, setCatImage] = useState([])
@@ -186,15 +187,16 @@ const WomenRetrieveInfo = () => {
        {/*  */}
             {/* style={{display:"none"}} */}
             <div className='cat-recommendation'>
-              <div className='des'>
+              <div className='recommender-info'>
                 <p>{info}</p>
                 
               </div>
-              <hr></hr>
+             
             {catImage.map((imageUrl, index) => (
               <div key={index} className='cat-items'>
                 <div className='img-fluid'>
-                  <img src={imageUrl} alt={`Item ${index}`} />
+                  {/* <img src={imageUrl} alt={`Item ${index} ` } /> */}
+                  <img src={imageUrl} alt={`Sorry, the system does not have the top rated category ` } />
                 </div>
               </div>
             ))}
@@ -206,6 +208,7 @@ const WomenRetrieveInfo = () => {
 
             <div className='rec-heading'>
             <h3>Recommendation Section</h3>
+            <button><Link to='/feedback' style={{textDecoration:"none",color:"white"}}> Feedback</Link></button>
             </div>
     
       <div className='recommendations'>

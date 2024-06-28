@@ -157,6 +157,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 // import { baseURL } from '../../utils/constants';
 import { baseURL } from '../../utils/constant';
+import "./feedback.css"
 
 export default function Feedback() {
   const [selectedStarCount, setSelectedStarCount] = useState(0);
@@ -209,7 +210,14 @@ export default function Feedback() {
   const handleStarMouseLeave = () => setSelectedStarOver(0);
 
   return (
-    <div>
+    <div className='feedback-form'>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <h1>Feedback Form</h1>
       <form onSubmit={handleFormSubmit}>
         <div className='input-frame'>
@@ -217,9 +225,13 @@ export default function Feedback() {
           <input type='text' value={location} placeholder='Your location' onChange={handleLocationChange} />
           <input type='email' value={email} placeholder='Email' onChange={handleEmailChange} />
           <input type='tel' value={phone} placeholder='Phone number' onChange={handlePhoneChange} />
+          <div>
           <textarea value={description} placeholder='Description' onChange={handleDescriptionChange} />
+          </div>
+          
         </div>
 
+<br></br>
         <div className='star-frame'>
           <div><h2>How satisfied are you using our recommender system?</h2></div>
           <div className='stars'>

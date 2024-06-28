@@ -1,20 +1,10 @@
 import React from 'react'
-
+import "./footer.css"
 const Footer = () => {
   return (
-     <div className='' style={{
-        // display:"flex",
-        // justifyContent:"center",
-        // justifyItems:"center",
-        // height:"500px",
-        // width:"100vw",
-        // background:"green",
-        // color:"#fff"
-    }}>
-      <div>
-        <h1>@ All reight reserve</h1>
+      <div className='main-footer'>
+        <h1>All Rights Reserved ©2024</h1>
       </div>
-    </div>
   )
 }
 

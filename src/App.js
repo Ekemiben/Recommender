@@ -45,7 +45,7 @@ function App() {
           <Route path='/womenedititem/:id' element={<WomenEdit />}/>
           <Route path='/womendashboard' element={<WomenDashboard />}/>
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
       
     </div>
