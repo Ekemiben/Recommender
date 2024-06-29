@@ -125,7 +125,7 @@ const WomenRetrieveInfo = () => {
             }  onChange={handleNeck}/> */}
             </div>
             <div>
-              <label >Bust</label>
+              <label >Burst</label>
             <input type="number" value={bust}  min="86.36" max="162.56" placeholder='Your chest measurement is between 86.36cm to 162.56cm' onBlur={(inputB)=>{
               if(Number(inputB.target.value <86.36 || inputB.target.value > 162.56)){
               setBust(0)
