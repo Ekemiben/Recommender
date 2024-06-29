@@ -17,7 +17,7 @@ const RetrieveInfo = () => {
   const [inseam, setInseam] = useState('');
   const [item, setItem] = useState([]);
 
-  const [info, setInfo] = useState("The clothe that will be shoing below is one of the most rated clothes in this category.As a recommender system I guess this will fit you.")
+  const [info, setInfo] = useState("The garment shown below is highly regarded in its category. As a recommendation system, I think this will suit you perfectly.")
 
   useEffect(() => {
     fetchData();

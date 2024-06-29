@@ -26,14 +26,11 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          {/* <Route path = '/upload' element={<UploadForm />}/>
-          <Route path = '/upload' element={< BMSG/>}/>
-          <Route path = '/upload' element={<Dashboard/>}/> */}
-          {/* <Route path='/' element={<Landing />}/> */}
+        
           <Route path='/' element={<Landing />}/>
           <Route path='/men' element={<BMSG />}/>
            <Route path='/women' element={<WomenRetrieveInfo />}/>
-         {/* <Route path='/kids' element={<BMSG />}/> */}
+ 
           <Route path='/loginsignup' element={<LoginSignup />}/>
           <Route path='/feedback' element={<Feedback />}/>
           
@@ -54,19 +51,4 @@ function App() {
 export default App;
 
 
-// import { BrowserRouter } from 'react-router-dom';
-// import { AuthWrapper } from './auth/Authswrapper';
-
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <BrowserRouter>
-//         <AuthWrapper />
-//       </BrowserRouter>      
-//     </div>
-//   );
-// }
-
-// export default App;
 
