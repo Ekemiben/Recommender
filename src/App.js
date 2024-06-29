@@ -8,7 +8,6 @@ import UploadForm from './components/uploadData/UploadForm';
 import BMSG from './components/Measuremanet/Retrieve/RetrieveInfo';
 import LoginSignup from './components/LogingSignup/LoginSignup';
 import Dashboard from './components/Measuremanet/Dashboard';
-import PrivateRoute from './components/LogingSignup/PrivateRoute';
 import EditItem from "./components/Measuremanet/EditItems/WomenEdit"
 import FemaleUpload from './components/uploadData/FemaleUpload';
 import WomenRetrieveInfo from './components/Measuremanet/Retrieve/WomenRetrieve';

@@ -3,7 +3,7 @@ import axios from 'axios';
 import './loginsignup.css';
 import { baseURL } from '../../utils/constant';
 import { Link, useHistory } from 'react-router-dom';
-import AuthContext from "./AuthContext"
+
 
 
 
@@ -11,7 +11,6 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  // const history = useHistory();
 
   useEffect(() => {
     // Check if a token exists in local storage when the component mounts
