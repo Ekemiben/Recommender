@@ -87,6 +87,7 @@ const RetrieveInfo = () => {
      <div className='input-box'>
 
       {/*  */}
+      {/* <div className='select-bg'> */}
       <select name="Your cloth material" id="Your cloth material" onChange={(option)=>{ 
         if(option.target.value === "Agbada"){
           setCategory(option.target.value)
@@ -98,12 +99,13 @@ const RetrieveInfo = () => {
       }
        
          
-        }}>
+        }} style={{borderRadius:"5px", width:"495px", height:"40px"}} >
         <option > Select your category</option>
           <option value="Agbada">Agbada</option>
           <option value="Casual">Casual</option>
           <option value="Senator">Senator</option>
         </select>
+        {/* </div> */}
       {/*  */}
       {/* <hr></hr> */}
       <br></br><br></br>

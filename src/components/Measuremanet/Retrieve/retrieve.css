@@ -150,7 +150,14 @@ body {
     font-size: 18px;
     color:#726c6c;
   }
-  
+  .select-bg{
+    /* background-color: #ffffff;
+    height: 100px;
+    margin-top:50px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  }
   /* Tablet styles */
   @media (min-width: 600px) and (max-width: 1024px) {
     .input-frame {

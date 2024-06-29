@@ -102,7 +102,7 @@ const WomenRetrieveInfo = () => {
       }
        
          
-        }}>
+        }} style={{borderRadius:"5px", width:"495px", height:"40px"}}>
         <option > Select your category</option>
           <option value="Agbada">Agbada</option>
           <option value="Casual">Casual</option>

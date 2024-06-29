@@ -34,7 +34,7 @@ const Dashboard = () => {
       } else if (option.target.value === "women"){
         setCategory(option.target.value)
       }   
-        }}>
+        }} style={{borderRadius:"5px", width:"495px", height:"40px"}}>
         <option > Select your clothe category</option>
           <option value="men">Men</option>
           <option value="women">Women</option>

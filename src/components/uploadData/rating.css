@@ -1,60 +1,4 @@
-/* *{
-    padding: 0;
-    margin: 0;
-}
-form{
-    height: 800px;
-    border:2px solid red;
-
-}
-.form-input-frame{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border:2px solid red;
-   
-    margin:auto;
-    margin-left:50px;
-}
-.form-input-frame input{
- margin: 10px 20px;
- height: 40px;
- width: 60%;
- padding-left: 10px;
-}
-.form-input-frame .input-file{
-    border:1px solid gray;
-    width: 80%;
-    height: 40px;
-    margin-left:80px;
-}
-.star-main-frame{
-    margin:20px;
-    border:2px solid gray;
-    width: 40%;
-    margin:auto;
-}
-
-.stars > span{
-    font-size: 40px;
-    cursor: pointer;
-}
-.star-selected{
-    font-size: 40px;
-    color:rgb(244, 174, 16);
-    cursor: pointer;
-}
-.star-selected:hover{
-    font-size: 40px;
-    color:rgb(244, 174, 16);
-    cursor: pointer;
-} */
-
-
-
-.form-frame{
-   
-    /* border-top:1.5px solid gray; */
+/* .form-frame{
     margin-top:60px;
 }
 .form-input-frame {
@@ -66,12 +10,10 @@ form{
     margin:auto;
     margin-top:60px;
     padding-top:20px;
-
   }
   
   .form-input-frame > div {
     margin-bottom: 20px;
-   
   }
   
   label {
@@ -85,10 +27,6 @@ form{
     border-radius: 5px;
     border: 1px solid #ccc;
   }
-  /* span{
-    border:1px solid  #ccc;
-    margin-left: 20px;
-  } */
   
   .input-file {
     margin-top: 20px;
@@ -135,3 +73,231 @@ form{
     color: orange;
   }
   
+   */
+
+
+
+
+
+   /* Base styles for form elements */
+/* .form-frame {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+}
+
+.selection {
+  text-align: center;
+}
+
+.form-input-frame {
+  margin-top: 20px;
+}
+
+.input-frame div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="number"], select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="file"] {
+  margin-top: 15px;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.stars span {
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.star-selected {
+  color: gold;
+}
+
+@media (min-width: 768px) {
+  .form-frame {
+    padding: 30px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .form-frame {
+    max-width: 800px;
+  }
+}
+
+
+@media (min-width: 1440px) {
+  .form-frame {
+    max-width: 1000px;
+  }
+} */
+
+
+
+
+
+
+
+
+
+
+/* Base styles */
+.upload-frame{
+  /* margin: 20px auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+.form-frame {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  /* background-color: #f2f2f2;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.selection {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-input-frame {
+  margin-top: 20px;
+}
+
+.form-input-frame div {
+  margin-bottom: 10px;
+}
+
+.form-input-frame label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-input-frame input[type="number"] {
+  width: calc(100% - 10px);
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.sizes {
+  margin-left: 10px;
+}
+
+.input-file {
+  margin-top: 20px;
+}
+
+.star-main-frame {
+  margin-top: 20px;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.stars span {
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.stars span:hover,
+.stars span.star-selected {
+  color: orange;
+}
+
+.star-main-frame button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Media Queries for Responsive Design */
+
+/* For smaller screens */
+@media screen and (max-width: 600px) {
+  .form-frame {
+    padding: 10px;
+  }
+  .form-input-frame input[type="number"] {
+    font-size: 14px;
+  }
+  .stars span {
+    font-size: 20px;
+  }
+}
+
+/* For larger screens */
+@media screen and (min-width: 1024px) {
+  .form-frame {
+    max-width: 800px;
+  }
+}
+
+/* Adjustments for very small screens (e.g., smartphones in portrait mode) */
+@media screen and (max-width: 400px) {
+  .form-input-frame input[type="number"] {
+    width: calc(100% - 8px);
+  }
+  .star-main-frame button {
+    font-size: 14px;
+  }
+}
+
+
+

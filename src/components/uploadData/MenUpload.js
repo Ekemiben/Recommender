@@ -245,7 +245,7 @@ const handleBlur = () => {
 };
  
   return (
-    <>
+    <div className='upload-frame'>
      <form onSubmit={handleFormSummission} className='form-frame'  >
 
     <div className='selection'><br></br><h1>You Selected {`${category}`}</h1> <br></br>
@@ -400,7 +400,7 @@ const handleBlur = () => {
     
     
       
-    </>
+    </div>
   )
 }
 
