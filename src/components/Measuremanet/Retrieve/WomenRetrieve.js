@@ -82,6 +82,7 @@ const WomenRetrieveInfo = () => {
     //   alert("Is either you haven't iputed the correct measurement or we don't have a recommendation for your measurement, please meake sure that all the neccessary fields field properly.")
     // }
   };
+ 
 
   return (
     <div className='main-frame'>
@@ -208,7 +209,7 @@ const WomenRetrieveInfo = () => {
 
             <div className='rec-heading'>
             <h3>Recommendation Section</h3>
-            <button><Link to='/feedback' style={{textDecoration:"none",color:"white"}}> Feedback</Link></button>
+            <button style={{height:"40px"}}><Link to='/feedback' style={{textDecoration:"none",color:"white", fontSize:"20px"}}> Feedback</Link></button>
             </div>
     
       <div className='recommendations'>
@@ -220,6 +221,8 @@ const WomenRetrieveInfo = () => {
           </div>
         ))}
       </div>
+
+      
     </div>
   );
 };

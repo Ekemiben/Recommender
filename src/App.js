@@ -40,6 +40,7 @@ function App() {
           <Route path='/dashboard' element={<Dashboard />}/>
           <Route path='/womenedititem/:id' element={<WomenEdit />}/>
           <Route path='/womendashboard' element={<WomenDashboard />}/>
+          <Route path='/womenretrieve' element={<WomenRetrieveInfo />}/>
         </Routes>
         <Footer />
       </BrowserRouter>

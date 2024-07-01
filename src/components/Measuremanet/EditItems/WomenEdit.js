@@ -194,180 +194,13 @@
 
 
 
-// import axios from 'axios';
-// import React, { useState, useEffect } from 'react';
-// import { baseURL } from '../../../utils/constant';
-// import { useParams } from 'react-router-dom';
-
-// const WomenEdit = () => {
-//   const { id } = useParams();
-  
-//   // State variables
-//   const [item, setItem] = useState({
-//     category: '',
-//     burst: '',
-//     waist: '',
-//     hips: '',
-//     inseam: '',
-//     imgurl: '',
-//     selectedstarcount: 0,
-//     clickcount: 0,
-//     selectedStarOver: 0
-//   });
-
-//   useEffect(() => {
-//     // Fetch item data from API based on id
-//     axios.get(`${baseURL}/getsingleWomenItem/` +id)
-//       .then(res => {
-//         const fetchedItem = res.data;
-//         setItem({
-//           category: fetchedItem.category,
-//           burst: fetchedItem.burst,
-//           waist: fetchedItem.waist,
-//           hips: fetchedItem.hips,
-//           inseam: fetchedItem.inseam,
-//           imgurl:fetchedItem.imgurl,
-//           selectedstarcount: fetchedItem.selectedstarcount,
-//           clickcount: fetchedItem.clickcount,
-//           selectedStarOver: fetchedItem.selectedStarOver
-//         });
-//       })
-//       .catch(error => console.error('Error fetching data:', error));
-//   }, [id]);
-
-//   // Input change handler
-//   const handleChange = (e) => {
-//     setItem({ ...item, category: e.target.value });
-//   };
-
-//   // Generic input change handler
-//   const handleInputChange = (e, propertyName) => {
-//     const value = e.target.value;
-//     setItem({ ...item, [propertyName]: value });
-//   };
-
-//   // File input change handler
-//   const handleImgChange = (e) => {
-//     // Handle file upload logic here if needed
-//   };
-
-//   // Form submission handler
-//   const handleFormSubmission = async (e) => {
-//     e.preventDefault();
-    
-//     try {
-//       // Make PUT request to update item
-//       const updateItem = await axios.put(`${baseURL}/updateSavedItem`, item, {
-//         headers: {
-//           'Content-Type': 'application/json'
-//         }
-//       });
-//       console.log("Item updated successfully:", updateItem.data);
-//     } catch (error) {
-//       console.error("The update was not successful", error);
-//     }
-//   };
-
-//   return (
-//     <form onSubmit={handleFormSubmission} className='form-frame'>
-//       <div className='selection'>
-//         <h1>You Selected {item.category}</h1>
-//         <select
-//           name="Your cloth material"
-//           id="Your-cloth-material"
-//           value={item.category}
-//           onChange={handleChange}
-//         >
-//           <option value="">Your clothes material</option>
-//           <option value="Agbada">Agbada</option>
-//           <option value="Casual">Casual</option>
-//           <option value="Senator">Senator</option>
-//         </select>
-//       </div>
-
-//       <div className='form-input-frame'>
-//         <div>
-//           <label>Burst</label>
-//           <input
-//             type="number"
-//             value={item.burst}
-//             min="86.36"
-//             max="162.56"
-//             placeholder='Your chest measurement is between 86.36cm to 162.56cm'
-//             onChange={(e) => handleInputChange(e, 'burst')}
-//           />
-//           <span className="sizes"></span>
-//         </div>
-//         <div>
-//           <label>Waist</label>
-//           <input
-//             type="number"
-//             value={item.waist}
-//             min="72.12"
-//             max="152.4"
-//             placeholder='Input your waist measurement between 72.12cm to 152.4cm'
-//             onChange={(e) => handleInputChange(e, 'waist')}
-//           />
-//         </div>
-//         <div>
-//           <label>Hips</label>
-//           <input
-//             type="number"
-//             value={item.hips}
-//             min="81.28"
-//             max="99.79"
-//             placeholder='Your sleeve measurement is between 81.28cm to 99.79cm'
-//             onChange={(e) => handleInputChange(e, 'hips')}
-//           />
-//         </div>
-//         <div>
-//           <label>Inseam</label>
-//           <input
-//             type="number"
-//             value={item.inseam}
-//             min="72.12"
-//             max="86.36"
-//             placeholder='Your inseam measurement is between 72.12cm to 86.36cm'
-//             onChange={(e) => handleInputChange(e, 'inseam')}
-//           />
-//         </div>
-
-//         <div className='input-file'>
-//           <input type="file" accept='image/*' onChange={handleImgChange} />
-//         </div>
-
-//         <div className='star-main-frame'>
-//           <h3>Rating</h3>
-          
-//         </div>
-
-//         <button type="submit">Update</button>
-//         <img src={item.imgurl} alt=''/>
-//       </div>
-//     </form>
-//   );
-// };
-
-// export default WomenEdit;
-
-
-
-
-
-
-
-
-
-
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { baseURL } from '../../../utils/constant';
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import { Rating } from 'react-simple-star-rating';
+import { Link, useParams } from 'react-router-dom';
 
 const WomenEdit = () => {
   const { id } = useParams();
-  
   
   // State variables
   const [item, setItem] = useState({
@@ -376,8 +209,8 @@ const WomenEdit = () => {
     burst: '',
     waist: '',
     hips: '',
-    inseam:'' ,
-    imgurl: '', // Initialize imgurl as a string if you expect a single image URL
+    inseam: '',
+    imgurl: '',
     selectedstarcount: 0,
     clickcount: 0,
     selectedStarOver: 0
@@ -385,133 +218,82 @@ const WomenEdit = () => {
 
   useEffect(() => {
     // Fetch item data from API based on id
-    axios.get(`${baseURL}/getsingleWomenItem/` + id)
+    axios.get(`${baseURL}/getsingleWomenItem/` +id)
       .then(res => {
         const fetchedItem = res.data;
         setItem({
           category: fetchedItem.category,
-          id:id,
           burst: fetchedItem.burst,
           waist: fetchedItem.waist,
           hips: fetchedItem.hips,
           inseam: fetchedItem.inseam,
-          imgurl: fetchedItem.imgurl,
+          imgurl:fetchedItem.imgurl,
           selectedstarcount: fetchedItem.selectedstarcount,
           clickcount: fetchedItem.clickcount,
           selectedStarOver: fetchedItem.selectedStarOver
         });
-        // setItem({...item, category: res.data.category, burst:res.data.burst, waist:res.data.waist, hips:res.data.hips, inseam:res.data.inseam, imgurl:res.data.imgurl, selectedstarcount:res.data.selectedstarcount, clickcount:res.data.clickcount, selectedStarOver:res.data.selectedStarOver
-        // })
       })
       .catch(error => console.error('Error fetching data:', error));
-  }, []);
+  }, [id]);
 
-  // Input change handler for select element
+
+  // Image handler
+  const handleImgChange = (e) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    // formData.append('image', file);
+    formData.append('imgurl', file);
+    
+    // Make API call to upload image
+    // axios.post(`${baseURL}/productsImages`, formData, {
+    //   headers: {
+    //     'Content-Type': 'multipart/form-data'
+    //   }
+    // })
+    // .then(res => {
+    //   // Assuming the response contains the URL of the uploaded image
+    //   const imageUrl = res.data.imageUrl;
+    //   setItem({ ...item, imgurl: imageUrl });
+    // })
+    // .catch(error => console.error('Error uploading image:', error));
+  };
+  // Image handler end
+ 
+
+  // Input change handler
   const handleChange = (e) => {
     setItem({ ...item, category: e.target.value });
   };
 
-  const navigate = useNavigate()
-  
-
-  const handleSumitForm = (e)=>{
-    // e.preventDefault()
-    axios.put(`${baseURL}/getsingleWomenItem/` + id, item)
-      .then(res => {
-        navigate('/')
-    
-  })
-  }
-
   // Generic input change handler
-  // const handleInputChange = (e, propertyName) => {
-  //   const value = e.target.value;
-  //   setItem({ ...item, [propertyName]: value });
-  // };
-
-  // File input change handler
-  // const handleImgChange = (e) => {
-  //   const file = e.target.files[0];
-  //   // You can handle file upload logic here if needed, and update item.imgurl accordingly
-  //   // For example, upload the file using axios and update imgurl in the state with the returned URL
-  // };
-
-  const handleImgChange = (e) => {
-    const file = e.target.files[0];
-    setItem({ ...item, imgurl: file });
+  const handleInputChange = (e, propertyName) => {
+    const value = e.target.value;
+    setItem({ ...item, [propertyName]: value });
   };
+
   
 
   // Form submission handler
-  // const handleFormSubmission = async (e) => {
-  //   e.preventDefault();
+  const handleFormSubmission = async (e) => {
+    e.preventDefault();
     
-  //   try {
-  //     // Make PUT request to update item
-  //     const updateItem = await axios.put(`${baseURL}/updateWonenItem ${item.id}`, item, {
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       }
-  //     });
-  //     console.log("Item updated successfully:", updateItem.data);
-  //   } catch (error) {
-  //     console.error("The update was not successful", error);
-  //   }
-  // };
-
-
-//   const handleFormSubmission = async (e) => {
-//     e.preventDefault();
-    
-//     try {
-//         // Assuming 'item' contains the updated data
-//         const updateItem = await axios.put(`${baseURL}/updateWonenItem/${item.id}`, item, {
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             }
-//         });
-//         console.log("Item updated successfully:", updateItem.data);
-//     } catch (error) {
-//         console.error("The update was not successful", error);
-//     }
-// };
-
-
-
-
-const handleFormSubmission = async (e) => {
-  e.preventDefault();
-  
-  try {
-    const formData = new FormData();
-    formData.append('id', item.id);
-    formData.append('category', item.category);
-    formData.append('burst', item.burst);
-    formData.append('waist', item.waist);
-    formData.append('hips', item.hips);
-    formData.append('inseam', item.inseam);
-    formData.append('imgurl', item.imgurl); // append the file object here
-    formData.append('selectedstarcount', item.selectedstarcount);
-    formData.append('clickcount', item.clickcount);
-    formData.append('selectedStarOver', item.selectedStarOver);
-
-    const updateItem = await axios.put(`${baseURL}/updateWonenItem/${item.id}`, formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    });
-    console.log("Item updated successfully:", updateItem.data);
-    Navigate='/'
-  } catch (error) {
-    console.error("The update was not successful", error);
-  }
-};
-
-    
+    try {
+      // Make PUT request to update item
+      const updateItem = await axios.put(`${baseURL}/updateWonenItem/${id}`, item, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      console.log("Item updated successfully:", updateItem.data);
+      alert("Your update was successful")
+      window.location = "/dashboard"
+    } catch (error) {
+      console.error("The update was not successful", error);
+    }
+  };
 
   return (
-    // <form onSubmit={handleFormSubmission} className='form-frame'>
-    <form onSubmit={handleSumitForm} className='form-frame'>
+    <form onSubmit={handleFormSubmission} className='form-frame'>
       <div className='selection'>
         <h1>You Selected {item.category}</h1>
         <select
@@ -536,8 +318,7 @@ const handleFormSubmission = async (e) => {
             min="86.36"
             max="162.56"
             placeholder='Your chest measurement is between 86.36cm to 162.56cm'
-            // onChange={(e) => handleInputChange(e, 'burst')}
-            onChange={(e) => setItem({ ...item, burst: e.target.value })}
+            onChange={(e) => handleInputChange(e, 'burst')}
           />
           <span className="sizes"></span>
         </div>
@@ -549,8 +330,7 @@ const handleFormSubmission = async (e) => {
             min="72.12"
             max="152.4"
             placeholder='Input your waist measurement between 72.12cm to 152.4cm'
-            // onChange={(e) => handleInputChange(e, 'waist')}
-            onChange={(e) => setItem({ ...item, waist: e.target.value })}
+            onChange={(e) => handleInputChange(e, 'waist')}
           />
         </div>
         <div>
@@ -561,8 +341,7 @@ const handleFormSubmission = async (e) => {
             min="81.28"
             max="99.79"
             placeholder='Your sleeve measurement is between 81.28cm to 99.79cm'
-            // onChange={(e) => handleInputChange(e, 'hips')}
-            onChange={(e) => setItem({ ...item, hips: e.target.value })}
+            onChange={(e) => handleInputChange(e, 'hips')}
           />
         </div>
         <div>
@@ -573,29 +352,16 @@ const handleFormSubmission = async (e) => {
             min="72.12"
             max="86.36"
             placeholder='Your inseam measurement is between 72.12cm to 86.36cm'
-            // onChange={(e) => handleInputChange(e, 'inseam')}
-            onChange={(e) => setItem({ ...item, inseam: e.target.value })}
+            onChange={(e) => handleInputChange(e, 'inseam')}
           />
         </div>
-
-        <div className='input-file'>
-          <input type="file" accept='image/*' onChange={handleImgChange} />
+        <div>
           {/* <input type="file" accept='image/*' onChange={(e) => setItem({ ...item, imgurl: e.target.files[0]})} /> */}
+          <input type="file" accept='image/*' onChange={handleImgChange} />
         </div>
-
-        {/* Star rating section */}
-        <div className='star-main-frame'>
-          <h3>Rating</h3>
-          {/* Implement star rating component */}
-          {/* Example implementation is already in your code */}
-          {/* Make sure to set selected star count and handle click events */}
-          <Rating value={item.selectedStarOver} />
-        </div>
-
-        <button type="submit" onClick={handleSumitForm()}>Update</button>
-        {/* <div className='image-frame' style={{height:"200px", width:"300px"}}>
-        <img src={`${baseURL}/productsImages/${item.imgurl}`} alt=''/>
-        </div> */}
+<br></br>
+<br></br>
+<br></br>
         <div className='image-frame' style={{height:"200px", width:"300px"}}>
         {item.imgurl && typeof item.imgurl !== 'string' ? (
           <img src={URL.createObjectURL(item.imgurl)} alt='' />
@@ -604,7 +370,13 @@ const handleFormSubmission = async (e) => {
         )}
       </div>
 
-       
+        <div className='star-main-frame'>
+          <h3>Rating</h3>
+          
+        </div>
+
+        <button type="submit">Update</button>
+        {/* <img src={item.imgurl} alt=''/> */}
       </div>
     </form>
   );
@@ -612,3 +384,183 @@ const handleFormSubmission = async (e) => {
 
 export default WomenEdit;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import axios from 'axios';
+// import React, { useState, useEffect } from 'react';
+// import { baseURL } from '../../../utils/constant';
+// import { Link, useParams } from 'react-router-dom';
+
+// const WomenEdit = () => {
+//   const { id } = useParams();
+  
+//   // State variables
+//   const [item, setItem] = useState({
+//     id: id,
+//     category: '',
+//     burst: '',
+//     waist: '',
+//     hips: '',
+//     inseam: '',
+//     imgurl: '', // Initially set as an empty string
+//     selectedstarcount: 0,
+//     clickcount: 0,
+//     selectedStarOver: 0
+//   });
+
+//   useEffect(() => {
+//     // Fetch item data from API based on id
+//     axios.get(`${baseURL}/getsingleWomenItem/` + id)
+//       .then(res => {
+//         const fetchedItem = res.data;
+//         setItem({
+//           category: fetchedItem.category,
+//           burst: fetchedItem.burst,
+//           waist: fetchedItem.waist,
+//           hips: fetchedItem.hips,
+//           inseam: fetchedItem.inseam,
+//           imgurl: fetchedItem.imgurl,
+//           selectedstarcount: fetchedItem.selectedstarcount,
+//           clickcount: fetchedItem.clickcount,
+//           selectedStarOver: fetchedItem.selectedStarOver
+//         });
+//       })
+//       .catch(error => console.error('Error fetching data:', error));
+//   }, [id]);
+
+//   // File input change handler
+//   const handleImgChange = (e) => {
+//     const file = e.target.files[0];
+//     const formData = new FormData();
+//     formData.append('image', file);
+    
+//     // Make API call to upload image
+//     // axios.post(`${baseURL}/productsImages`, formData, {
+//     //   headers: {
+//     //     'Content-Type': 'multipart/form-data'
+//     //   }
+//     // })
+//     // .then(res => {
+//     //   // Assuming the response contains the URL of the uploaded image
+//     //   const imageUrl = res.data.imageUrl;
+//     //   setItem({ ...item, imgurl: imageUrl });
+//     // })
+//     // .catch(error => console.error('Error uploading image:', error));
+//   };
+
+//   // Form submission handler
+//   const handleFormSubmission = async (e) => {
+//     e.preventDefault();
+    
+//     try {
+//       // Make PUT request to update item
+//       const updateItem = await axios.put(`${baseURL}/updateWomenItem/${id}`, item, {
+//         headers: {
+//           'Content-Type': 'application/json'
+//         }
+//       });
+//       console.log("Item updated successfully:", updateItem.data);
+//       alert("Your update was successful")
+//       window.location = "/dashboard"
+//     } catch (error) {
+//       console.error("The update was not successful", error);
+//     }
+//   };
+
+//   return (
+//     <form onSubmit={handleFormSubmission} className='form-frame'>
+//       <div className='selection'>
+//         <h1>You Selected {item.category}</h1>
+//         <select
+//           name="Your cloth material"
+//           id="Your-cloth-material"
+//           value={item.category}
+//           onChange={(e) => setItem({ ...item, category: e.target.value })}
+//         >
+//           <option value="">Your clothes material</option>
+//           <option value="Agbada">Agbada</option>
+//           <option value="Casual">Casual</option>
+//           <option value="Senator">Senator</option>
+//         </select>
+//       </div>
+
+//       <div className='form-input-frame'>
+//         <div>
+//           <label>Burst</label>
+//           <input
+//             type="number"
+//             value={item.burst}
+//             min="86.36"
+//             max="162.56"
+//             placeholder='Your chest measurement is between 86.36cm to 162.56cm'
+//             onChange={(e) => setItem({ ...item, burst: e.target.value })}
+//           />
+//           <span className="sizes"></span>
+//         </div>
+//         <div>
+//           <label>Waist</label>
+//           <input
+//             type="number"
+//             value={item.waist}
+//             min="72.12"
+//             max="152.4"
+//             placeholder='Input your waist measurement between 72.12cm to 152.4cm'
+//             onChange={(e) => setItem({ ...item, waist: e.target.value })}
+//           />
+//         </div>
+//         <div>
+//           <label>Hips</label>
+//           <input
+//             type="number"
+//             value={item.hips}
+//             min="81.28"
+//             max="99.79"
+//             placeholder='Your sleeve measurement is between 81.28cm to 99.79cm'
+//             onChange={(e) => setItem({ ...item, hips: e.target.value })}
+//           />
+//         </div>
+//         <div>
+//           <label>Inseam</label>
+//           <input
+//             type="number"
+//             value={item.inseam}
+//             min="72.12"
+//             max="86.36"
+//             placeholder='Your inseam measurement is between 72.12cm to 86.36cm'
+//             onChange={(e) => setItem({ ...item, inseam: e.target.value })}
+//           />
+//         </div>
+//         <div>
+//           <input type="file" accept='image/*' onChange={handleImgChange} />
+//         </div>
+
+//         <div className='image-frame' style={{ height: "200px", width: "300px" }}>
+//           {item.imgurl ? (
+//             <img src={item.imgurl.startsWith('http') ? item.imgurl : `${baseURL}/productsImages/${item.imgurl}`} alt='' />
+//           ) : (
+//             <p>No image selected</p>
+//           )}
+//         </div>
+
+//         <div className='star-main-frame'>
+//           <h3>Rating</h3>
+//         </div>
+
+//         <button type="submit">Update</button>
+//       </div>
+//     </form>
+//   );
+// };
+
+// export default WomenEdit;

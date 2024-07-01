@@ -155,7 +155,6 @@
 
 import axios from 'axios';
 import React, { useState } from 'react';
-// import { baseURL } from '../../utils/constants';
 import { baseURL } from '../../utils/constant';
 import "./feedback.css"
 
@@ -180,14 +179,19 @@ export default function Feedback() {
     formData.append('selectedstarcount', selectedStarCount);
 
     try {
-      // const response = await axios.post(`${baseURL}/savedFeedBack`, formData, {
-      const response = await axios.post("http://localhost:5000/savedFeedBack", formData, {
+      const response = await axios.post(`${baseURL}/savedFeedBack`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
       });
-      alert("Your feedback was sent successfully!");
-      console.log('Response:', response.data);
+      // alert("Your feedback was sent successfully!");
+      // console.log('Response:', response.data);
+      if (response.status === 200) {
+        alert("Your feedback was sent successfully!");
+        console.log('Response:', response.data);
+      } else {
+        alert("Failed to submit feedback. Please try again later.");
+      }
     } catch (error) {
       console.error('Error submitting feedback:', error);
       // alert("Failed to submit feedback. Please ensure all fields are filled correctly.");

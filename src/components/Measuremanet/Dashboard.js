@@ -34,7 +34,7 @@ const Dashboard = () => {
       } else if (option.target.value === "women"){
         setCategory(option.target.value)
       }   
-        }} style={{borderRadius:"5px", width:"495px", height:"40px"}}>
+        }} style={{borderRadius:"5px", height:"40px"}}>
         <option > Select your clothe category</option>
           <option value="men">Men</option>
           <option value="women">Women</option>
@@ -45,14 +45,17 @@ const Dashboard = () => {
         // For navigation, you typically use the 'history' object from React Router
         // Example: history.push('/upload');
       }}>
-        <Link to="/upload" style={{textDecoration: "none", color:"black"}}>Add Men Item</Link>
+        <Link to="/upload" style={{textDecoration: "none", color:"white"}}>Add Men Item</Link>
       </button>
+      <br></br>
+      <br></br>
+      <br></br>
       <button onClick={() => { 
         // Your logic here, if needed
         // For navigation, you typically use the 'history' object from React Router
         // Example: history.push('/upload');
       }}>
-        <Link to="/womenupload" style={{textDecoration: "none", color:"black"}}>Add Women Item</Link>
+        <Link to="/womenupload" style={{textDecoration: "none", color:"white"}}>Add Women Item</Link>
       </button>
             </div>
           </div>

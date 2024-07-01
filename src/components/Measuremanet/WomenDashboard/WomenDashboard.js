@@ -9,12 +9,16 @@ import EditItem from '../EditItems/WomenEdit'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import Dashboard from '../Dashboard';
 // Modal end
 
 const WomenDashboard = () => {
   const [items, setItems] = useState([]);
   const [category, setCategory] = useState('');
   const [imgDisplay, setImgDisplay] = useState([]);
+  const [agbada, setAgbada] = useState()
+  const [casual, setCasual] = useState()
+  const [senator, setSenator] = useState()
 
 
   // Modal
@@ -75,14 +79,55 @@ const WomenDashboard = () => {
   }
   
 
+ 
 
+
+  const categoryDisplay = () => {
+    // Initialize counters for each category
+    let senatorCount = 0;
+    let casualCount = 0;
+    let agbadaCount = 0;
+  
+    // Iterate through each item in the items array
+    items.forEach(item => {
+      // Check the category of each item and increment the respective counter
+      switch (item.category) {
+        case 'Senator':
+          senatorCount++;
+          break;
+        case 'Casual':
+          casualCount++;
+          break;
+        case 'Agbada':
+          agbadaCount++;
+          break;
+        default:
+          // Handle any other categories if needed
+          break;
+      }
+      console.log(item)
+    });
+  
+    // Update state or output the counts
+    setSenator(senatorCount);
+    setCasual(casualCount);
+    setAgbada(agbadaCount);
+  
+    // Optionally, log the counts to the console
+    console.log("Senator count:", senatorCount);
+    console.log("Casual count:", casualCount);
+    console.log("Agbada count:", agbadaCount);
+  }
+  
 
   
 
   return (
+    
     <div className='data-frame'>
+      
       <div className='cat'>
-        <select
+        <select style={{borderRadius:"5px", width:"500px", height:"40px"}}
           name="category"
           id="category"
           value={category}
@@ -97,6 +142,7 @@ const WomenDashboard = () => {
       </div>
       <br /><br /><hr />
       <br /><br />
+     
       {/* Displaying filtered items */}
       <div className='item-container'>
         {items
@@ -121,9 +167,21 @@ const WomenDashboard = () => {
             </div>
           ))}
       </div>
+      <button onClick={categoryDisplay}>Category Check</button>
+      <div >
+       <p>{senator}</p>
+        <p>{casual}</p>
+        <p>{agbada}</p>
+        <p>{
+          // <Dashboard senator={senator} />
+          }</p>
+    </div>
+
     </div>
   );
+ 
 };
+
 
 export default WomenDashboard;
 
