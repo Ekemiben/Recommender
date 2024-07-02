@@ -61,22 +61,7 @@ const WomenDashboard = () => {
     }
   };
   
-  const handleUpdate = (props)=>{
-    return (
-      <div  >
-       {/* {items.map((item, index)=>{
-        return(
-          <EditItem key={index} id={item._id} category={item.category} burst={item.burst} waist={item.waist} hips={item.hips} inseam={item.inseam} image={item.imgurl} starRate={item.selectedstarcount}  />
-          
-        )
-      
-       })}
-       
-       {window.location="/edititem"} */}
-      
-      </div>
-    )
-  }
+  
   
 
  
@@ -152,7 +137,7 @@ const WomenDashboard = () => {
               <p>Category: {itemData.category}</p>
               <img src={`${baseURL}/productsImages/${itemData.imgurl}`} alt={itemData.category} />
               <div className='msg-desc'>
-              <p>Burst: {itemData.bust}</p>
+              <p>Bust: {itemData.bust}</p>
               {/* <p>Chest: {itemData.chest}</p> */}
               <p>Waist: {itemData.waist}</p>
               <p>Hips: {itemData.hips}</p>
@@ -167,14 +152,9 @@ const WomenDashboard = () => {
             </div>
           ))}
       </div>
-      <button onClick={categoryDisplay}>Category Check</button>
+      {/* <button onClick={categoryDisplay}>Category Check</button> */}
       <div >
-       <p>{senator}</p>
-        <p>{casual}</p>
-        <p>{agbada}</p>
-        <p>{
-          // <Dashboard senator={senator} />
-          }</p>
+      
     </div>
 
     </div>

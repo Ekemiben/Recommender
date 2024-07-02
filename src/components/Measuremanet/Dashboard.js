@@ -5,27 +5,36 @@ import MenDashboard from './MenDashboard/MenDashboard';
 import { Link } from 'react-router-dom';
 import WomenDashboard from './WomenDashboard/WomenDashboard';
 
-const Dashboard = () => {
+
+const Dashboard = (props) => {
+  const [childData, setChilData] = useState("")
     const [category, setCategory] =useState()
+
     const relaodFunct = (e)=>{
       e.preventDefault()
     }
+    // const handleChildData = (data)=>{
+    //   setCategory(data)
+    // }
   return (
     <div className="dashboard">
       <form onChange={relaodFunct}>
 
       
       <div className="top">
-        <div className="card">Senator</div>
+        <div className="card">Senator
+          {/* {props.senator} */}
+        </div>
         <div className="card">Casual</div>
         <div className="card">Agbada</div>
       </div>
+      {/* <WomenDashboard onSendData = {handleChildData}/> */}
       <hr></hr>
       <div className="bottom">
         <div className="left-pan">
           <div className="profile-info">
-            <div className="info-item">Image Name: John Doe</div>
-            <div className="info-item">Email: johndoe@example.com</div>
+            <div className="info-item">Name: Admin</div>
+            <div className="info-item">Email: admin@gmail.com</div>
            
             <div>
             <select className='left-pan-select' name="Your cloth material" id="Your cloth material" onChange={(option)=>{ 

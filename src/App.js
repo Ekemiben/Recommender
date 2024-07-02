@@ -15,6 +15,7 @@ import Footer from './components/Footer/Footer';
 import WomenDashboard from './components/Measuremanet/WomenDashboard/WomenDashboard';
 import WomenEdit from './components/Measuremanet/EditItems/WomenEdit';
 import Feedback from './components/Feedback/Feedback';
+import MenEdit from './components/Measuremanet/EditItems/MenEdit';
 
 
 function App() {
@@ -38,9 +39,13 @@ function App() {
           <Route path='/womenupload' element={<FemaleUpload />} />
           
           <Route path='/dashboard' element={<Dashboard />}/>
+          {/* <Route path='/menedit' element={<MenEdit />}/> */}
+          <Route path='/menedit/:id' element={<MenEdit />}/>
           <Route path='/womenedititem/:id' element={<WomenEdit />}/>
           <Route path='/womendashboard' element={<WomenDashboard />}/>
           <Route path='/womenretrieve' element={<WomenRetrieveInfo />}/>
+
+
         </Routes>
         <Footer />
       </BrowserRouter>

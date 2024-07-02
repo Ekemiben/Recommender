@@ -111,20 +111,26 @@ const MenDashboardDisplay = () => {
     setCategory(event.target.value);
   };
 
-  const handleDelete = async (itemId) => {
-    itemId.preventDfault()
+  
+  const handleDelete = async (id) => {
     try {
-      await axios.delete(`${baseURL}/deleteSavedItem/${itemId}`);
-      fetchData();
+      await axios.delete(`${baseURL}/deleteSavedItem/${id}`);
+      setItems(items.filter(item => item._id !== id));
+      console.log(`Item with id ${id} deleted successfully`);
     } catch (error) {
-      console.error('Error deleting item:', error);
+      // Check if the error response indicates the item was not found
+      if (error.response && error.response.status === 404) {
+        console.log(`Item with id ${id} not found`);
+      } else {
+        console.log('Error deleting item:', error);
+      }
     }
   };
 
   return (
     <div className='data-frame'>
       <div className='cat'>
-        <select
+        <select style={{borderRadius:"5px", width:"500px", height:"40px"}}
           name="category"
           id="category"
           value={category}
@@ -157,8 +163,8 @@ const MenDashboardDisplay = () => {
               <p>id {itemData._id}</p>
               </div>
               <div className='btn'>
-                <button style={{ background: "#ff4141" }} onClick={() => handleDelete(itemData._id)}>Delete</button>
-                <button style={{color: "#fff"}} ><Link to='/edititem'  style={{ background: "#007BFF", textDecoration: "none", color:"#fff"}}>Edit</Link></button>
+                <button style={{ background: "#ff4141" }} onClick={handleDelete}>Delete</button>
+                <button style={{color: "#fff"}} ><Link to={`/menedit/${itemData._id}`}  style={{ background: "#007BFF", textDecoration: "none", color:"#fff"}}>Edit</Link></button>
               </div>
             </div>
           ))}

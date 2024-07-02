@@ -179,15 +179,22 @@ export default function Feedback() {
     formData.append('selectedstarcount', selectedStarCount);
 
     try {
-      const response = await axios.post(`${baseURL}/savedFeedBack`, formData, {
+      // const response = await axios.post(`${baseURL}/savedFeedBack`, formData, {
+      //   headers: {
+      //     'Content-Type': 'multipart/form-data'
+      //   }
+      // });
+      console.log(email)
+      const response = await axios.post(`http://localhost:5000/savedFeedBack`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
       });
       // alert("Your feedback was sent successfully!");
-      // console.log('Response:', response.data);
+      console.log('Response:', response.data);
       if (response.status === 200) {
-        alert("Your feedback was sent successfully!");
+        alert("Thank you, your feedback was sent successfully!");
+        window.location ='/'
         console.log('Response:', response.data);
       } else {
         alert("Failed to submit feedback. Please try again later.");
@@ -196,6 +203,7 @@ export default function Feedback() {
       console.error('Error submitting feedback:', error);
       // alert("Failed to submit feedback. Please ensure all fields are filled correctly.");
     }
+    console.log([...formData.entries()])
   };
 
   const handleNameChange = (e) => setName(e.target.value);
