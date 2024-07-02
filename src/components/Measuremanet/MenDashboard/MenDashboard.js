@@ -163,7 +163,7 @@ const MenDashboardDisplay = () => {
               <p>id {itemData._id}</p>
               </div>
               <div className='btn'>
-                <button style={{ background: "#ff4141" }} onClick={handleDelete}>Delete</button>
+                <button style={{ background: "#ff4141" }} onClick={() => handleDelete(itemData._id)}>Delete</button>
                 <button style={{color: "#fff"}} ><Link to={`/menedit/${itemData._id}`}  style={{ background: "#007BFF", textDecoration: "none", color:"#fff"}}>Edit</Link></button>
               </div>
             </div>

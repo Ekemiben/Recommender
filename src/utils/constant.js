@@ -1,5 +1,5 @@
-export const baseURL = "http://localhost:5000"
-// export const baseURL = "https://recommender-api-bmhn.onrender.com"
+// export const baseURL = "http://localhost:5000"
+export const baseURL = "https://recommender-api-bmhn.onrender.com"
 // export const baseURL = "https://recommender-api-bmhn.onrender.com"
 
 // mongodb+srv://ngangamichael83:melabeauty-backend@cluster0.nv4hoeq.mongodb.net/?retryWrites=true&w=majority
