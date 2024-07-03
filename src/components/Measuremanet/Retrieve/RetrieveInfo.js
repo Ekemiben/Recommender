@@ -59,7 +59,8 @@ const RetrieveInfo = () => {
         itemData.selectedstarcount > 3
       );
     });
-    const imageUrls = filteredImages.map((item) => `${baseURL}/productsImages/${item.imgurl}`);
+    // const imageUrls = filteredImages.map((item) => `${baseURL}/productsImages/${item.imgurl}`);
+    const imageUrls = filteredImages.map((item) => `${item.imgurl}`);
     setImgDisplay(imageUrls);
     catImageDisplay()
   };
@@ -75,7 +76,8 @@ const RetrieveInfo = () => {
         itemData.category == category
       );
     });
-    const firstImageUrl = filteredImages.length > 0 ? `${baseURL}/productsImages/${filteredImages[0].imgurl}` : '';
+    // const firstImageUrl = filteredImages.length > 0 ? `${baseURL}/productsImages/${filteredImages[0].imgurl}` : '';
+    const firstImageUrl = filteredImages.length > 0 ? `${filteredImages[0].imgurl}` : '';
     setCatImage([firstImageUrl]);
   };
 

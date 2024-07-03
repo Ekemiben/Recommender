@@ -59,7 +59,7 @@ const WomenRetrieveInfo = () => {
         itemData.selectedstarcount > 3
       );
     });
-    const imageUrls = filteredImages.map((item) => `${baseURL}/productsImages/${item.imgurl}`);
+    const imageUrls = filteredImages.map((item) => `${item.imgurl}`);
     setImgDisplay(imageUrls);
     catImageDisplay()
   };
@@ -76,7 +76,9 @@ const WomenRetrieveInfo = () => {
       );
       
     });
-    const firstImageUrl = filteredImages.length > 0 ? `${baseURL}/productsImages/${filteredImages[0].imgurl}` : '';
+    // const firstImageUrl = filteredImages.length > 0 ? `${baseURL}/productsImages/${filteredImages[0].imgurl}` : '';
+    const firstImageUrl = filteredImages.length > 0 ? `${filteredImages[0].imgurl}` : '';
+    setCatImage([firstImageUrl]);
     setCatImage([firstImageUrl]);
     // if(!filteredImages){
     //   alert("Is either you haven't iputed the correct measurement or we don't have a recommendation for your measurement, please meake sure that all the neccessary fields field properly.")
