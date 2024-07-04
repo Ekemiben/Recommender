@@ -1,5 +1,5 @@
 
-/* Base styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -12,29 +12,30 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    /* background-color: #fce3fe; */
+   
   }
   .input-frame-cat-fram{
     width: 100%;
-    /* border:1px solid #ccc; */
     display: flex;
     justify-content: space-evenly;
-
-
+    display: flex;
+    flex-wrap: wrap;
 
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   
   }
   
   .input-frame {
     width: 100vw;
     max-width: 500px;
     margin-bottom: 20px;
-    /* border:2px solid #ccc; */
+  
     
   }
+  
   .cat-recommendation{
     width:30%;
   }
@@ -42,7 +43,7 @@ body {
   .cat-items{
     margin: 80px 15px;
     padding: 10px;
-    /* border:1px solid red; */
+ 
 
   }
   .cat-items img{
@@ -146,19 +147,16 @@ body {
     align-items: center;
     justify-content: center;
     line-height: 25px;
-    /* font-weight: 800; */
     font-size: 18px;
     color:#726c6c;
   }
-  .select-bg{
-    /* background-color: #ffffff;
-    height: 100px;
-    margin-top:50px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  .rec-heading{
+ 
+    display: flex;
+    flex-wrap: wrap;
   }
-  /* Tablet styles */
+
+ 
   @media (min-width: 600px) and (max-width: 1024px) {
     .input-frame {
       width: 80%;
@@ -172,12 +170,20 @@ body {
       flex: 1 1 45%;
       max-width: 45%;
     }
+    .cat-recommendation{
+      width:100%;
+    }
   }
   
-  /* Mobile styles */
+
   @media (max-width: 599px) {
     .input-frame {
       width: 90%;
+    }
+    .cat-box{
+    border-radius:5px;
+    width: 495px;
+    height: 40px;
     }
   
     .recommendations {
@@ -193,6 +199,9 @@ body {
     button {
       width: 100%;
       padding: 15px;
+    }
+    .cat-recommendation{
+      width:100%;
     }
   }
   

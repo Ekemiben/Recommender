@@ -105,7 +105,7 @@ const WomenRetrieveInfo = () => {
       }
        
          
-        }} style={{borderRadius:"5px", width:"495px", height:"40px"}}>
+        }} style={{width:"100%", height:"40px", borderRadius:"5px"}}>
         <option > Select your category</option>
           <option value="Agbada">Agbada</option>
           <option value="Casual">Casual</option>
@@ -129,10 +129,11 @@ const WomenRetrieveInfo = () => {
             </div>
             <div>
               <label >Bust</label>
-            <input type="number" value={bust}  min="86.36" max="162.56" placeholder='Your bust measurement is between 86.36cm to 162.56cm' onBlur={(inputB)=>{
-              if(Number(inputB.target.value <86.36 || inputB.target.value > 162.56)){
-              setBust(0)
+            <input type="number" value={bust}  min="81.28" max="124.46" placeholder='Your chest measurement is between 81.28cm to 124.46cm' onBlur={(inputB)=>{
+              if(Number(inputB.target.value <81.28 || inputB.target.value > 124.46)){
+              
               alert("Your input should not be less than 86.36 and not more than 162.56")
+              setBust(86.36)
               return inputB.target.value =""
             } else{
              setBust(inputB.target.value)
@@ -142,11 +143,12 @@ const WomenRetrieveInfo = () => {
             </div>
             <div>
             <label>Waist</label>
-            <input type="number" value={waist}  min="72.12" max="152.4"  placeholder='Your waist measurement is between 72.12cm to 152.4cm' onBlur={(inputC)=>{
-              if(Number(inputC.target.value <72.12 || inputC.target.value> 152.4)){
-              setWaist(0)
+            <input type="number" value={waist}   min="67.32" max="106.68"  placeholder='Input your waist measurement between 67.32cm to 106.68cm' onBlur={(inputC)=>{
+              if(Number(inputC.target.value <67.32 || inputC.target.value> 106.68)){
               
-              alert("Your input should not be less than 72.12 and not more than 152.4")
+              
+              alert("Your input should not be less than 67.32 and not more than 106.68")
+              setWaist(67.32)
               inputC.target.value =""
             } else{
              setWaist(inputC.target.value)
@@ -157,11 +159,11 @@ const WomenRetrieveInfo = () => {
       
             <div>
             <label>Hips</label>
-            <input type="number" value={hips}  min="81.28" max="99.79" placeholder='Your hips measurement is between 81.28cm to 99.79cm' onBlur={(inputD)=>{
-              if(Number(inputD.target.value <81.28 || inputD.target.value> 99.79)){
+            <input type="number" value={hips}  min="87.63" max="132.08" placeholder='Your hips  measurement is between 87.63cm to 132.08cm' onBlur={(inputD)=>{
+              if(Number(inputD.target.value <87.63 || inputD.target.value> 132.08)){
               alert("Your input should not be less than 81.28 and not more than 99.79")
               inputD.target.value =""
-              setHips(81.28)
+              setHips(87.63)
             } else{
              setHips(inputD.target.value)
               

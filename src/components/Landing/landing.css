@@ -70,11 +70,21 @@
   }
   
   /* Media queries for responsiveness */
+  @media screen and (max-width: 600px) {
+    .frame-intro-msg p{
+      font-size: 25px;
+      text-align:left;
+      font-weight: 100;
+
+    }
+  }
   @media screen and (min-width: 768px) {
     /* Adjustments for tablets and larger screens */
     .landing-main-frame {
       padding: 40px;
     }
+   
+    
   
     .frame-one {
       flex-direction: row;
@@ -104,5 +114,6 @@
     .frame-intro-msg {
       max-width: 800px; /* Increase max-width for larger screens */
     }
+    
   }
   

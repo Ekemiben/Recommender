@@ -215,7 +215,7 @@ const handleBlur = () => {
      <form onSubmit={handleFormSummission} className='form-frame'  >
 
     <div className='selection'><br></br><h1>You Selected {`${category}`}</h1> <br></br>
-    <select
+    <select style={{width:"100%", height:"40px", borderRadius:"5px", fontSize:"18px", justifyContent:"center", justifyItems:"center"}}
       name="Your cloth material"
       id="Your-cloth-material"
       value={category}

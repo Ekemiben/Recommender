@@ -254,7 +254,7 @@ const handleBlur = () => {
 
 
 
-    <select
+    <select style={{width:"100%", height:"40px", borderRadius:"5px", fontSize:"18px", justifyContent:"center", justifyItems:"center"}}
       name="Your cloth material"
       id="Your-cloth-material"
       value={category}
@@ -398,7 +398,7 @@ const handleBlur = () => {
 
       
     </form>
-    
+
     </div>
   )
 }
