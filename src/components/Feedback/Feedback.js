@@ -159,51 +159,39 @@ import { baseURL } from '../../utils/constant';
 import "./feedback.css"
 
 export default function Feedback() {
-  const [selectedStarCount, setSelectedStarCount] = useState(0);
+  // const [selectedStarCount, setSelectedStarCount] = useState(0);
   const [selectedStarOver, setSelectedStarOver] = useState(0);
   const [clickCount, setClickCount] = useState(0);
+
+
+
+
+  const [selectedstarcount, setSelectedStarCount] = useState(0);
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState();
+  const [phone, setPhone] = useState("");
   const [description, setDescription] = useState("");
 
-  const handleFormSubmit = async (e) => {
+  const feedBackForm = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('location', location);
-    formData.append('email', email);
-    formData.append('phone', phone);
-    formData.append('description', description);
-    formData.append('selectedstarcount', selectedStarCount);
+    const formData = {
+      name,
+      location,
+      email,
+      phone,
+      description,
+      selectedstarcount
+    };
 
     try {
-      // const response = await axios.post(`${baseURL}/savedFeedBack`, formData, {
-      //   headers: {
-      //     'Content-Type': 'multipart/form-data'
-      //   }
-      // });
-      console.log(email)
-      const response = await axios.post(`http://localhost:5000/savedFeedBack`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-      // alert("Your feedback was sent successfully!");
-      console.log('Response:', response.data);
-      if (response.status === 200) {
-        alert("Thank you, your feedback was sent successfully!");
-        window.location ='/'
-        console.log('Response:', response.data);
-      } else {
-        alert("Failed to submit feedback. Please try again later.");
-      }
+      const response = await axios.post(`${baseURL}/savedFeedBack`, formData);
+      // Assuming MongoDB handles _id, createdAt, updatedAt on the server
+      alert("Your feedback was sent successfully!");
+      window.location = "/"
     } catch (error) {
-      console.error('Error submitting feedback:', error);
-      // alert("Failed to submit feedback. Please ensure all fields are filled correctly.");
+      alert("Ensure you input the data correctly");
     }
-    console.log([...formData.entries()])
   };
 
   const handleNameChange = (e) => setName(e.target.value);
@@ -231,7 +219,7 @@ export default function Feedback() {
       <br></br>
       <br></br>
       <h1>Feedback Form</h1>
-      <form onSubmit={handleFormSubmit}>
+      <form onSubmit={feedBackForm}>
         <div className='input-frame'>
           <input type='text' value={name} placeholder='Name' onChange={handleNameChange} />
           <input type='text' value={location} placeholder='Your location' onChange={handleLocationChange} />
@@ -250,7 +238,7 @@ export default function Feedback() {
             {[...Array(10)].map((_, index) => (
               <span
                 key={index}
-                className={`star ${index + 1 <= selectedStarCount ? "star-selected" : ""} ${index + 1 <= selectedStarOver ? "star-hover" : ""}`}
+                className={`star ${index + 1 <= selectedstarcount ? "star-selected" : ""} ${index + 1 <= selectedStarOver ? "star-hover" : ""}`}
                 onClick={() => handleStarClick(index)}
                 onMouseOver={() => handleStarMouseOver(index)}
                 onMouseLeave={handleStarMouseLeave}
@@ -259,7 +247,7 @@ export default function Feedback() {
               </span>
             ))}
           </div>
-          <div style={{ display: "none" }}>Rating Count: {selectedStarCount}</div>
+          <div style={{ display: "none" }}>Rating Count: {selectedstarcount}</div>
           <div style={{ display: "none" }}>Click Count: {clickCount}</div>
           <div>Mouse Over Count: {selectedStarOver}</div>
         </div>
@@ -271,3 +259,99 @@ export default function Feedback() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import axios from 'axios';
+// import React, { useState } from 'react';
+// import { baseURL } from '../../utils/constant';
+
+// export default function Feedback() {
+//   const [selectedstarcount, setSelectedStarCount] = useState(0);
+//   const [name, setName] = useState("");
+//   const [location, setLocation] = useState("");
+//   const [email, setEmail] = useState("");
+//   const [phone, setPhone] = useState("");
+//   const [description, setDescription] = useState("");
+
+//   const feedBackForm = async (e) => {
+//     e.preventDefault();
+//     const formData = {
+//       name,
+//       location,
+//       email,
+//       phone,
+//       description,
+//       selectedstarcount
+//     };
+
+//     try {
+//       const response = await axios.post(`${baseURL}/savedFeedBack`, formData);
+//       // Assuming MongoDB handles _id, createdAt, updatedAt on the server
+//       alert("Your feedback was sent successfully!");
+//     } catch (error) {
+//       alert("Ensure you input the data correctly");
+//     }
+//   };
+
+//   const customerName = (e) => setName(e.target.value);
+//   const customerlocation = (e) => setLocation(e.target.value);
+//   const customerEmail = (e) => setEmail(e.target.value);
+//   const customerPhone = (e) => setPhone(e.target.value);
+//   const customerDescription = (e) => setDescription(e.target.value);
+
+//   // return (
+//   //   <div>
+//   //     <h1>Feedback Form</h1>
+//   //     <form onSubmit={feedBackForm}>
+//   //       <div className='input-frame'>
+//   //         <input type='text' value={name} placeholder='Name' onChange={customerName} />
+//   //         <input type='text' value={location} placeholder='Your location' onChange={customerlocation} />
+//   //         <input type='email' value={email} placeholder='Email' onChange={customerEmail} />
+//   //         <input type='tel' value={phone} placeholder='Phone number' onChange={customerPhone} />
+//   //         <textarea value={description} placeholder='Description' onChange={customerDescription} />
+//   //       </div>
+//   //       <div className='star-frame'>
+//   //         <h1>How satisfied are you using our recommender system?</h1>
+//   //         <div className='stars'>
+//   //           {[...Array(10)].map((_, index) => (
+//   //             <span
+//   //               key={index}
+//   //               className={`${index + 1 <= selectedstarcount ? "star-selected" : ""}`}
+//   //               onClick={() => setSelectedStarCount(index + 1)}
+//   //               onMouseOver={() => setSelectedStarCount(index + 1)}
+//   //               onMouseLeave={() => setSelectedStarCount(0)}
+//   //             >
+//   //               &#9733;
+//   //             </span>
+//   //           ))}
+//   //         </div>
+//   //       </div>
+//   //       <div className='btn'>
+//   //         <button type='submit'>Submit</button>
+//   //       </div>
+//   //     </form>
+//   //   </div>
+//   // );
+// }

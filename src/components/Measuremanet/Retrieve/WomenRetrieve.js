@@ -26,7 +26,9 @@ const WomenRetrieveInfo = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(`${baseURL}/getallWomenItem/`);
+
       setItem(response.data);
+      // console.log(response.data)
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -48,26 +50,41 @@ const WomenRetrieveInfo = () => {
     setInseam(e.target.value.trim());
   };
 
+
+
+  // const imageDisplay = () => {
+  //   const result = item.map(items => items.imgurl)
+  //   console.log(result)
+  // }
+
+
   const imageDisplay = () => {
     const filteredImages = item.filter((itemData) => {
       return (
-        // itemData.neck == neck &&
-        itemData.bust == bust &&
+        itemData.burst == bust &&
         itemData.waist == waist &&
         itemData.hips == hips &&
         itemData.inseam == inseam &&
         itemData.selectedstarcount > 3
       );
+    
     });
     const imageUrls = filteredImages.map((item) => `${item.imgurl}`);
     setImgDisplay(imageUrls);
     catImageDisplay()
+   
+    if(filteredImages.length === 0){
+      alert("Sorry, recommendation for your measurement is not found, Please contact the admin")
+    }
   };
+
+
+
   const catImageDisplay = () => {
     const filteredImages = item.filter((itemData) => {
       return (
         // itemData.neck == neck &&
-        itemData.bust == bust &&
+        itemData.burst == bust &&
         itemData.waist == waist &&
         itemData.hips == hips &&
         itemData.inseam == inseam &&
@@ -76,13 +93,12 @@ const WomenRetrieveInfo = () => {
       );
       
     });
+    console.log(filteredImages)
     // const firstImageUrl = filteredImages.length > 0 ? `${baseURL}/productsImages/${filteredImages[0].imgurl}` : '';
     const firstImageUrl = filteredImages.length > 0 ? `${filteredImages[0].imgurl}` : '';
     setCatImage([firstImageUrl]);
-    setCatImage([firstImageUrl]);
-    // if(!filteredImages){
-    //   alert("Is either you haven't iputed the correct measurement or we don't have a recommendation for your measurement, please meake sure that all the neccessary fields field properly.")
-    // }
+    // setCatImage([firstImageUrl]);
+   
   };
  
 
@@ -201,7 +217,7 @@ const WomenRetrieveInfo = () => {
               <div key={index} className='cat-items'>
                 <div className='img-fluid'>
                   {/* <img src={imageUrl} alt={`Item ${index} ` } /> */}
-                  <img src={imageUrl} alt={`Sorry, the system does not have the top rated category ` } />
+                  <img src={imageUrl} alt={`Sorry, the measurement you enterd,does not have the top rated category of ${category}'s style` } />
                 </div>
               </div>
             ))}

@@ -1,0 +1,50 @@
+.feedback-form-two {
+    display: flex;
+    flex-wrap: wrap; /* Wrap items to next row when screen size is reduced */
+    gap: 20px; /* Space between customer detail items */
+    background-color: #f0f0f0;
+  }
+  
+  .customer-details {
+
+    padding: 15px;
+    border-radius: 8px;
+    flex: 1; /* Flexbox item to take equal width */
+    min-width: 300px; /* Minimum width of each customer details box */
+    max-width: 400px; /* Maximum width of each customer details box */
+  }
+
+  .feedback-form-two div {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .customer-details p {
+    margin: 5px 0;
+    font-size: 18px;
+    color:#726c6c;
+    line-height: 25px;
+    font-size: 18px;
+
+  }
+  .customer-details p span{
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: 700;
+
+  }
+  .feedback-form-two button{
+    background: rgb(255, 65, 65)
+  }
+  
+  @media (max-width: 600px) {
+    .customer-details {
+      min-width: 100%; /* Full width on smaller screens */
+      max-width: 100%;
+    }
+  }
+  

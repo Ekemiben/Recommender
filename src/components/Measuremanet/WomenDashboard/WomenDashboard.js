@@ -5,12 +5,7 @@ import './womendashboard.css'; // Import your CSS file
 import { Link } from 'react-router-dom';
 import EditItem from '../EditItems/WomenEdit'
 
-// Modal
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
-import Dashboard from '../Dashboard';
-// Modal end
+
 
 const WomenDashboard = () => {
   const [items, setItems] = useState([]);
@@ -21,12 +16,6 @@ const WomenDashboard = () => {
   const [senator, setSenator] = useState()
 
 
-  // Modal
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-  // End Modal
 
   useEffect(() => {
     fetchData();
@@ -135,7 +124,7 @@ const WomenDashboard = () => {
           .map((itemData, index) => (
             <div className='item' key={index}>
               <p>Category: {itemData.category}</p>
-              <img src={`${baseURL}/productsImages/${itemData.imgurl}`} alt={itemData.category} />
+              <img src={`${itemData.imgurl}`} alt={itemData.category} />
               <div className='msg-desc'>
               <p>Bust: {itemData.bust}</p>
               {/* <p>Chest: {itemData.chest}</p> */}

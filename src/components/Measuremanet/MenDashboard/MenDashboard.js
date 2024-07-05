@@ -152,7 +152,7 @@ const MenDashboardDisplay = () => {
           .map((itemData, index) => (
             <div className='item' key={index}>
               <p>Category: {itemData.category}</p>
-              <img src={`${baseURL}/productsImages/${itemData.imgurl}`} alt={itemData.category} />
+              <img src={`${itemData.imgurl}`} alt={itemData.category} />
               <div className='msg-desc'>
               <p>Neck: {itemData.neck}</p>
               <p>Chest: {itemData.chest}</p>

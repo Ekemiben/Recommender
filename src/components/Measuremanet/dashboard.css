@@ -77,7 +77,9 @@
     background-color: #fff;
     border:1px #ccc solid;
   }
-  
+  .dashboard hr{
+    border:0.5px #ccc solid;
+  }
   .form {
     display: flex;
     flex-direction: column;

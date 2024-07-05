@@ -59,10 +59,14 @@ const RetrieveInfo = () => {
         itemData.selectedstarcount > 3
       );
     });
+    console.log(filteredImages)
     // const imageUrls = filteredImages.map((item) => `${baseURL}/productsImages/${item.imgurl}`);
     const imageUrls = filteredImages.map((item) => `${item.imgurl}`);
     setImgDisplay(imageUrls);
     catImageDisplay()
+    if(filteredImages.length === 0){
+      alert("Sorry, recommendation for your measurement is not found, Please contact the admin")
+    }
   };
   const catImageDisplay = () => {
     const filteredImages = item.filter((itemData) => {
@@ -199,7 +203,7 @@ const RetrieveInfo = () => {
             {catImage.map((imageUrl, index) => (
               <div key={index} className='cat-items'>
                 <div className='img-fluid'>
-                  <img src={imageUrl} alt={`Item ${index}`} />
+                  <img src={imageUrl} alt={`Sorry, the system does not have the top rated category of ${category}'s style `} />
                 </div>
               </div>
             ))}

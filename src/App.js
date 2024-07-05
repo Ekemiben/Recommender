@@ -16,6 +16,7 @@ import WomenDashboard from './components/Measuremanet/WomenDashboard/WomenDashbo
 import WomenEdit from './components/Measuremanet/EditItems/WomenEdit';
 import Feedback from './components/Feedback/Feedback';
 import MenEdit from './components/Measuremanet/EditItems/MenEdit';
+import FeedBackDashBoard from './components/Measuremanet/FeedBackBoard/FeedBackDashBoard';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Route path='/womenedititem/:id' element={<WomenEdit />}/>
           <Route path='/womendashboard' element={<WomenDashboard />}/>
           <Route path='/womenretrieve' element={<WomenRetrieveInfo />}/>
+          <Route path='/feedbackboard' element={<FeedBackDashBoard />}/>
 
 
         </Routes>

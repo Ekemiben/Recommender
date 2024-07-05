@@ -4,6 +4,7 @@ import MyRating from '../uploadData/MenUpload';
 import MenDashboard from './MenDashboard/MenDashboard';
 import { Link } from 'react-router-dom';
 import WomenDashboard from './WomenDashboard/WomenDashboard';
+import FeedBackDashBoard from './FeedBackBoard/FeedBackDashBoard';
 
 
 const Dashboard = (props) => {
@@ -44,7 +45,7 @@ const Dashboard = (props) => {
         setCategory(option.target.value)
       }   
         }} style={{borderRadius:"5px", height:"40px"}}>
-        <option > Select your clothe category</option>
+        <option > Select Gender</option>
           <option value="men">Men</option>
           <option value="women">Women</option>
         </select>
@@ -73,6 +74,11 @@ const Dashboard = (props) => {
           <form className="form">
             
             {category === "men" ? <MenDashboard /> : <WomenDashboard />}
+            <br></br>
+            <br></br>
+            <h2>FeedBack Report</h2>
+            <hr></hr>
+            <FeedBackDashBoard />
             
           </form>
         </div>
