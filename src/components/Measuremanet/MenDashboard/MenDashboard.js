@@ -130,7 +130,7 @@ const MenDashboardDisplay = () => {
   return (
     <div className='data-frame'>
       <div className='cat'>
-        <select style={{borderRadius:"5px", width:"500px", height:"40px"}}
+        <select style={{borderRadius:"5px", width:"100%", height:"40px"}}
           name="category"
           id="category"
           value={category}

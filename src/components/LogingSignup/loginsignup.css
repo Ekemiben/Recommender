@@ -64,3 +64,32 @@
     font-size: 18px;
     font-weight: 500;
 }
+
+
+
+
+/* * Media Queries for responsive design */ 
+@media (max-width: 768px) {
+    .login-signup-container {
+        width: 100%; /* Full width on smaller screens */
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+    }
+
+    .login-signup-fields input {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    .login-signup-container button {
+        width: 100%; /* Full width button on smaller screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+

@@ -12,3 +12,13 @@
 .main-footer h1{
     margin: 60px auto;
 }
+
+@media only screen and (max-width: 600px) {
+    .main-footer {
+     display: flex
+    }
+    .main-footer h1{
+        margin: auto;
+        font-size: 23px;
+    }
+}
