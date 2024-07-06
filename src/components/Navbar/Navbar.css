@@ -1,14 +1,18 @@
-.navbar{
+/* .navbar{
     display: flex;
     justify-content: space-around;
     padding: 16px;
     box-shadow: 0 1px 3px -2px black;
-    /* width: 100vw; */
+
 }
 .nav-logo{
     display: flex;
     align-items: center;
     gap: 10px;
+}
+.nav-logo img{
+    width: 70px;
+    height: 40px;
 }
 .nav-logo p{
     color: #171717;
@@ -38,7 +42,6 @@
     height: 3px;
     border-radius: 10px;
     background: #ff4141;
-    /* margin-top:100px; */
 }
 .nav-login-cart{
     display: flex;
@@ -74,4 +77,140 @@
     background: red;
     color: white;
 }
+ */
 
+
+
+
+
+
+
+ .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #333; */
+    /* background-color: #fff; */
+    /* color: white; */
+    padding: 10px;
+    box-shadow: 0 1px 3px -2px black;
+  }
+  
+  .nav-logo img {
+    width: 100px; /* Adjust as needed */
+    height: auto;
+  }
+  
+  .nav-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-menu li {
+    margin-right: 20px;
+    font-size: 20px;
+  }
+  
+  .nav-menu li:last-child {
+    margin-right: 0;
+  }
+  
+  .nav-menu a {
+    /* color: white; */
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+  }
+  
+  .nav-menu a:hover {
+    text-decoration: underline;
+  }
+  
+  .nav-menu hr {
+    border: none;
+    height: 2px;
+    background-color: white;
+    background-color: #333;
+    margin-top: -2px;
+  }
+  
+  /* .nav-login-cart button {
+    background-color: transparent;
+    background-color: #333;
+    color: #333;
+    border: 1px solid white;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .nav-login-cart button:hover {
+    background-color: white;
+    color: #333;
+  } */
+
+
+  .nav-login-cart{
+    /* display: flex;
+    align-items: center;
+    gap: 45px; */
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+  .nav-login-cart button{
+    width: 157px;
+    height:58px;
+    outline:none;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: white;
+    cursor: pointer;
+}
+.nav-login-cart button:active{
+    background-color: #f3f3f3;
+}
+.nav-login-cart button:hover{
+    background-color: #fff;
+    
+    
+}
+  
+  /* Hamburger menu styles */
+  .hamburger {
+    display: none; /* Hidden by default */
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .nav-menu {
+      display: none; /* Hide the menu items by default */
+      flex-direction: column;
+      position: absolute;
+      top: 60px; /* Adjust as needed based on your navbar height */
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      background-color: #fff;
+      z-index: 1000;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+    }
+  
+    .nav-menu.open {
+      display: flex; /* Show the menu when open */
+    }
+  
+    .nav-menu li {
+      text-align: center;
+      margin: 10px 0;
+    }
+  
+    .hamburger {
+      display: block; /* Show the hamburger icon */
+      cursor: pointer;
+      color: #333;
+      font-size: 24px;
+    }
+  }
+  

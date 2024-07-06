@@ -185,7 +185,7 @@ const MenEdit = () => {
         {item.imgurl && typeof item.imgurl !== 'string' ? (
           <img src={URL.createObjectURL(item.imgurl)} alt='' />
         ) : (
-          <img src={`${baseURL}/productsImages/${item.imgurl}`} alt='' />
+          <img src={`${item.imgurl}`} alt='' />
         )}
       </div>
 

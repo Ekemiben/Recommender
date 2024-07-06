@@ -1,32 +1,44 @@
-import React, { useContext, useState } from 'react'
-import './Navbar.css'
+
+
+import React, { useState } from 'react';
+import './Navbar.css';
 import { Link } from 'react-router-dom';
+import Logo from '../../images/fashion-logo-design.jpg';
 
+const Navbar = ({ count }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
-const Navebar = ({count}) => {
-  console.log(count)
-  const [menu, setMenu] = useState('home');
-  // const {getTotalCartItems}= useContext(ShopContext)
-  
   return (
     <div className='navbar'>
       <div className='nav-logo'>
-        {/* <img src = {logo} alt='' /> <p>Shopping Mall</p> */}
+        <img src={Logo} alt='' />
       </div>
-      <ul className='nav-menu'>
-        <li onClick={()=> setMenu("home")}><Link style={{textDecoration: "none"}} to='/'>Home</Link> {menu === "home" ? <hr />: <></>}</li>
-        <li onClick={()=> {setMenu("men")}}><Link style={{textDecoration: "none"}} to='/men'>Men</Link>  {menu === "men" ? <hr />: <></>}</li>
-        <li onClick={()=> {setMenu("women")}}><Link style={{textDecoration: "none"}} to ='/women'>Women</Link>{menu === "women" ? <hr />: <></>}</li>
-        {/* <li onClick={()=> {setMenu("kids")}}><Link style={{textDecoration: "none"}} to ='/kids'>kids</Link> {menu === "kids" ? <hr />: <></>}</li> */}
+      <ul className={`nav-menu ${menuOpen ? 'open' : ''}`}>
+        <li onClick={() => setMenuOpen(false)}>
+          <Link to='/' style={{ textDecoration: 'none' }}>Home</Link>
+        </li>
+        <li onClick={() => setMenuOpen(false)}>
+          <Link to='/men' style={{ textDecoration: 'none' }}>Men</Link>
+        </li>
+        <li onClick={() => setMenuOpen(false)}>
+          <Link to='/women' style={{ textDecoration: 'none' }}>Women</Link>
+        </li>
       </ul>
       <div className='nav-login-cart'>
-        <button> <Link style={{textDecoration: "none"}} to='LoginSignup'>Login</Link></button>
-        
+        <button>
+          <Link to='LoginSignup' style={{ textDecoration: 'none', color: '#000' }}>Login</Link>
+        </button>
       </div>
-
+      <div className='hamburger' onClick={toggleMenu}>
+        &#9776; {/* Hamburger icon */}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navebar
+export default Navbar;
+

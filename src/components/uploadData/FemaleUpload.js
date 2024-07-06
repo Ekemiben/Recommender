@@ -250,8 +250,9 @@ const handleBlur = () => {
       <label>Waist</label>
       <input type="number" value={waist}  min="67.32" max="106.68"  placeholder='Input your waist measurement between 67.32cm to 106.68cm' onBlur={(inputC)=>{
         if(Number(inputC.target.value <67.32 || inputC.target.value> 106.68)){
-        setWaist(67.32)
+       
         alert("Your input should not be less than 67.32 and not more than 106.68")
+        setWaist(67.32)
         return inputC.target.value =""
       } else{
        setWaist(inputC.target.value)

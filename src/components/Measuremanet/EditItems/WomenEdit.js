@@ -311,13 +311,13 @@ const WomenEdit = () => {
 
       <div className='form-input-frame'>
         <div>
-          <label>Burst</label>
+          <label>Bust</label>
           <input
             type="number"
             value={item.burst}
-            min="86.36"
-            max="162.56"
-            placeholder='Your chest measurement is between 86.36cm to 162.56cm'
+            min="81.28"
+            max="124.46"
+            placeholder='Your chest measurement is between 81.28cm to 124.46cm'
             onChange={(e) => handleInputChange(e, 'burst')}
           />
           <span className="sizes"></span>
@@ -327,9 +327,9 @@ const WomenEdit = () => {
           <input
             type="number"
             value={item.waist}
-            min="72.12"
-            max="152.4"
-            placeholder='Input your waist measurement between 72.12cm to 152.4cm'
+            min="67.32"
+            max="106.68"
+            placeholder='Input your waist measurement between 67.32cm to 106.68cm'
             onChange={(e) => handleInputChange(e, 'waist')}
           />
         </div>
@@ -338,9 +338,9 @@ const WomenEdit = () => {
           <input
             type="number"
             value={item.hips}
-            min="81.28"
-            max="99.79"
-            placeholder='Your sleeve measurement is between 81.28cm to 99.79cm'
+            min="87.63"
+            max="132.08"
+            placeholder='Your sleeve measurement is between 87.63cm to 132.08cm'
             onChange={(e) => handleInputChange(e, 'hips')}
           />
         </div>
@@ -366,7 +366,7 @@ const WomenEdit = () => {
         {item.imgurl && typeof item.imgurl !== 'string' ? (
           <img src={URL.createObjectURL(item.imgurl)} alt='' />
         ) : (
-          <img src={`${baseURL}/productsImages/${item.imgurl}`} alt='' />
+          <img src={`${item.imgurl}`} alt='' />
         )}
       </div>
 
