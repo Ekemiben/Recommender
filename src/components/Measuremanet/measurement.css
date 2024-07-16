@@ -81,3 +81,14 @@ img{
     height: 60%;
     margin: 30px;
 }
+.card{
+    display: flex;
+    flex-direction: column;
+}
+.card p{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    /* margin: auto; */
+}

@@ -116,11 +116,11 @@ const RetrieveInfo = () => {
       {/* <hr></hr> */}
       <br></br><br></br>
             <label >Neck</label>
-            <input type="number" value={neck}  min="35.56" max="57.15"  placeholder='Your chest measurement is between 35.56cm to 57.15cm' onBlur={(inputA)=>{
-              if(Number(inputA.target.value < 35.56 || inputA.target.value > 57.15)){
+            <input type="number" value={neck}  min="22.86" max="57.15"  placeholder='Your chest measurement is between 22.86cm to 57.15cm' onBlur={(inputA)=>{
+              if(Number(inputA.target.value < 22.86 || inputA.target.value > 57.15)){
               
               alert("Your input should not be less than 35.56cm and not more than 57.15cm")
-              setNeck(35.56)
+              setNeck(22.86)
                 inputA.target.value =""
                 return
             } else{
@@ -161,12 +161,12 @@ const RetrieveInfo = () => {
       
             <div>
             <label>Sleeve</label>
-            <input type="number" value={sleeve}  min="81.28" max="99.79" placeholder='Your sleeve measurement is between 81.28cm to 99.79cm' onBlur={(inputD)=>{
-              if(Number(inputD.target.value <81.28 || inputD.target.value> 99.79)){
+            <input type="number" value={sleeve}  min="13.95" max="99.79" placeholder='Your sleeve measurement is between 81.28cm to 99.79cm' onBlur={(inputD)=>{
+              if(Number(inputD.target.value <13.95 || inputD.target.value> 99.79)){
               
               
-              alert("Your input should not be less than 81.28 and not more than 99.79")
-              setSleeve(81.28)
+              alert("Your input should not be less than 13.95 and not more than 99.79")
+              setSleeve(13.95)
               inputD.target.value =""
             } else{
              setSleeve(inputD.target.value)
@@ -177,10 +177,10 @@ const RetrieveInfo = () => {
             <div>
       
             <label>Inseam</label>
-            <input type="number" value={inseam}  min="72.12" max="86.36" placeholder='Your inseam measurement is between 72.12cm to 86.36cm' onBlur={(inputE)=>{
-              if(Number(inputE.target.value <72.1 || inputE.target.value> 86.36)){
-              alert("Your input should not be less than 72.1 and not more than 86.36")
-              setInseam(72.1)
+            <input type="number" value={inseam}  min="63.5" max="86.36" placeholder='Your inseam measurement is between 63.5cm to 91.44cm' onBlur={(inputE)=>{
+              if(Number(inputE.target.value <63.5 || inputE.target.value> 86.36)){
+              alert("Your input should not be less than 63.5 and not more than 86.36")
+              setInseam(63.5)
               inputE.target.value =""
             } else{
              setInseam(inputE.target.value)

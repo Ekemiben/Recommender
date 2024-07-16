@@ -46,6 +46,7 @@ function App() {
           <Route path='/womendashboard' element={<WomenDashboard />}/>
           <Route path='/womenretrieve' element={<WomenRetrieveInfo />}/>
           <Route path='/feedbackboard' element={<FeedBackDashBoard />}/>
+          <Route path='*' element={< > Page Not Found</>}/>
 
 
         </Routes>
