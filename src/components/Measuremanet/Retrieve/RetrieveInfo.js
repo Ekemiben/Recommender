@@ -116,7 +116,7 @@ const RetrieveInfo = () => {
       {/* <hr></hr> */}
       <br></br><br></br>
             <label >Neck</label>
-            <input type="number" value={neck}  min="22.86" max="57.15"  placeholder='Your chest measurement is between 22.86cm to 57.15cm' onBlur={(inputA)=>{
+            <input type="text" value={neck}   placeholder='Your chest measurement is between 22.86cm to 57.15cm' onBlur={(inputA)=>{
               if(Number(inputA.target.value < 22.86 || inputA.target.value > 57.15)){
               
               alert("Your input should not be less than 35.56cm and not more than 57.15cm")
@@ -131,7 +131,7 @@ const RetrieveInfo = () => {
             </div>
             <div>
               <label >Chest</label>
-            <input type="number" value={chest}  min="86.36" max="162.56" placeholder='Your chest measurement is between 86.36cm to 162.56cm' onBlur={(inputB)=>{
+            <input type="text" value={chest}  placeholder='Your chest measurement is between 86.36cm to 162.56cm' onBlur={(inputB)=>{
               if(Number(inputB.target.value <86.36 || inputB.target.value > 162.56)){
              
               alert("Your input should not be less than 86.36 and not more than 162.56")
@@ -145,7 +145,7 @@ const RetrieveInfo = () => {
             </div>
             <div>
             <label>Waist</label>
-            <input type="number" value={waist}  min="72.12" max="152.4"  placeholder='Input your waist measurement between 72.12cm to 152.4cm' onBlur={(inputC)=>{
+            <input type="text" value={waist}    placeholder='Input your waist measurement between 72.12cm to 152.4cm' onBlur={(inputC)=>{
               if(Number(inputC.target.value <72.12 || inputC.target.value> 152.4)){
              
               
@@ -161,7 +161,7 @@ const RetrieveInfo = () => {
       
             <div>
             <label>Sleeve</label>
-            <input type="number" value={sleeve}  min="13.95" max="99.79" placeholder='Your sleeve measurement is between 81.28cm to 99.79cm' onBlur={(inputD)=>{
+            <input type="text" value={sleeve}   placeholder='Your sleeve measurement is between 81.28cm to 99.79cm' onBlur={(inputD)=>{
               if(Number(inputD.target.value <13.95 || inputD.target.value> 99.79)){
               
               
@@ -177,7 +177,7 @@ const RetrieveInfo = () => {
             <div>
       
             <label>Inseam</label>
-            <input type="number" value={inseam}  min="63.5" max="86.36" placeholder='Your inseam measurement is between 63.5cm to 91.44cm' onBlur={(inputE)=>{
+            <input type="text" value={inseam}  placeholder='Your inseam measurement is between 63.5cm to 91.44cm' onBlur={(inputE)=>{
               if(Number(inputE.target.value <63.5 || inputE.target.value> 86.36)){
               alert("Your input should not be less than 63.5 and not more than 86.36")
               setInseam(63.5)

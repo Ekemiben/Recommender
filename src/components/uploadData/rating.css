@@ -216,7 +216,7 @@ button[type="submit"] {
   font-weight: bold;
 }
 
-.form-input-frame input[type="number"] {
+.form-input-frame input[type="text"] {
   width: calc(100% - 10px);
   padding: 8px;
   font-size: 16px;

@@ -122,10 +122,9 @@ const MenEdit = () => {
         <div>
           <label>Neck</label>
           <input
-            type="number"
+            type="text"
             value={item.neck}
-            min="22.86"
-            max="57.15"
+           
             placeholder='Your neck measurement is between 22.86cm to 57.15cm'
             onChange={(e) => handleInputChange(e, 'neck')}
           />
@@ -134,10 +133,9 @@ const MenEdit = () => {
         <div>
           <label>Chest</label>
           <input
-            type="number"
+            type="text"
             value={item.chest}
-            min="86.36"
-            max="162.56"
+       
             placeholder='Your chest measurement is between 86.36cm to 162.56cm'
             onChange={(e) => handleInputChange(e, 'chest')}
           />
@@ -146,10 +144,9 @@ const MenEdit = () => {
         <div>
           <label>Waist</label>
           <input
-            type="number"
+            type="text"
             value={item.waist}
-            min="72.12"
-            max="152.4"
+         
             placeholder='Input your waist measurement between 72.12cm to 152.4cm'
             onChange={(e) => handleInputChange(e, 'waist')}
           />
@@ -157,10 +154,9 @@ const MenEdit = () => {
         <div>
           <label>Sleeve</label>
           <input
-            type="number"
+            type="text"
             value={item.sleeve}
-            min="13.95"
-            max="99.79"
+           
             placeholder='Your sleeve measurement is between 13.95cm to 99.79cm'
             onChange={(e) => handleInputChange(e, 'sleeve')}
           />
@@ -168,10 +164,9 @@ const MenEdit = () => {
         <div>
           <label>Inseam</label>
           <input
-            type="number"
+            type="text"
             value={item.inseam}
-            min="63.5"
-            max="91.44"
+          
             placeholder='Your inseam measurement is between 63.5cm to 91.44cm'
             onChange={(e) => handleInputChange(e, 'inseam')}
           />

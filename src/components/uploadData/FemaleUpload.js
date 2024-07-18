@@ -235,7 +235,7 @@ const handleBlur = () => {
         <br></br>
       <div>
         <label >Bust</label>
-      <input type="number" value={burst}  min="81.28" max="171.46" placeholder='Your chest measurement is between 81.28cm to 171.46cm' onBlur={(inputB)=>{
+      <input type="text" value={burst}  placeholder='Your chest measurement is between 81.28cm to 171.46cm' onBlur={(inputB)=>{
         if(Number(inputB.target.value <81.28 || inputB.target.value > 171.46)){
         alert("Your input should not be less than 81.28 and not more than 124.46")
         setBurst(81.36)
@@ -247,7 +247,7 @@ const handleBlur = () => {
       </div>
       <div>
       <label>Waist</label>
-      <input type="number" value={waist}  min="67.32" max="145.68"  placeholder='Input your waist measurement between 67.32cm to 145.68cm' onBlur={(inputC)=>{
+      <input type="text" value={waist}    placeholder='Input your waist measurement between 67.32cm to 145.68cm' onBlur={(inputC)=>{
         if(Number(inputC.target.value <67.32 || inputC.target.value> 145.68)){
        
         alert("Your input should not be less than 67.32 and not more than 145.68")
@@ -261,7 +261,7 @@ const handleBlur = () => {
 
       <div>
       <label>Hips</label>
-      <input type="number" value={hips}  min="87.63" max="139.08" placeholder='Your hips  measurement is between 87.63cm to 132.08cm' onBlur={(inputD)=>{
+      <input type="text" value={hips}   placeholder='Your hips  measurement is between 87.63cm to 132.08cm' onBlur={(inputD)=>{
         if(Number(inputD.target.value <77.63 || inputD.target.value> 139.08)){
         alert("Your input should not be less than 87.63 and not more than 139.08")
         setHips(87.63)
@@ -274,7 +274,7 @@ const handleBlur = () => {
       <div>
 
       <label>Inseam</label>
-      <input type="number" value={inseam}  min="58.12" max="90.36" placeholder='Your inseam measurement is between 72.12cm to 86.36cm' onBlur={(inputE)=>{
+      <input type="text" value={inseam}  placeholder='Your inseam measurement is between 72.12cm to 86.36cm' onBlur={(inputE)=>{
         if(Number(inputE.target.value <58.1 || inputE.target.value> 90.36)){
        
         

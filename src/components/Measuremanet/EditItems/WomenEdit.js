@@ -192,10 +192,9 @@ const WomenEdit = () => {
         <div>
           <label>Bust</label>
           <input
-            type="number"
+            type="text"
             value={item.burst}
-            min="81.28"
-            max="171.46"
+            
             placeholder='Your chest measurement is between 81.28cm to 171.46cm'
             onChange={(e) => handleInputChange(e, 'burst')}
           />
@@ -204,10 +203,9 @@ const WomenEdit = () => {
         <div>
           <label>Waist</label>
           <input
-            type="number"
+            type="text"
             value={item.waist}
-            min="67.32"
-            max="145.68"
+          
             placeholder='Input your waist measurement between 67.32cm to 145.68cm'
             onChange={(e) => handleInputChange(e, 'waist')}
           />
@@ -215,10 +213,9 @@ const WomenEdit = () => {
         <div>
           <label>Hips</label>
           <input
-            type="number"
+            type="text"
             value={item.hips}
-            min="87.63"
-            max="139.08"
+           
             placeholder='Your sleeve measurement is between 87.63cm to 139.08cm'
             onChange={(e) => handleInputChange(e, 'hips')}
           />
@@ -226,10 +223,9 @@ const WomenEdit = () => {
         <div>
           <label>Inseam</label>
           <input
-            type="number"
+            type="text"
             value={item.inseam}
-            min="58.12"
-            max="86.36"
+          
             placeholder='Your inseam measurement is between 72.12cm to 86.36cm'
             onChange={(e) => handleInputChange(e, 'inseam')}
           />
