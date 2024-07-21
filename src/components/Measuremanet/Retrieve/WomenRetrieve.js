@@ -190,7 +190,7 @@ const WomenRetrieveInfo = () => {
       
             <label>Inseam</label>
             <input type="text" value={inseam}  placeholder='Your inseam measurement is between 58.12cm to 90.36cm' onBlur={(inputE)=>{
-              if(Number(inputE.target.value <58.12 || inputE.target.value> 90.36)){
+              if(Number(inputE.target.value <58.12 || inputE.target.value> 150.36)){
               
               
               alert("Your input should not be less than 58.12 and not more than 90.36")
